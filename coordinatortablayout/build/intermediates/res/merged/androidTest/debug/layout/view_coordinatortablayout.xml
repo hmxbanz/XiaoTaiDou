@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:elevation="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:stateListAnimator="@drawable/appbarlayout_elevated"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingtoolbarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="enterAlways"
+            app:titleEnabled="true"
+            app:tabIndicatorColor="@android:color/black"
+            app:tabTextColor="@android:color/holo_red_dark"
+            >
+
+            <ImageView
+            android:id="@+id/img_top_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:scaleType="centerCrop"
+            app:layout_collapseMode="parallax" />
+
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                 >
+                <RelativeLayout
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <cn.xtdar.app.view.widget.SelectableRoundedImageView
+                        android:id="@+id/img_avator"
+                        android:src="@drawable/bg_getuser1"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="14sp"
+                        android:scaleType="centerCrop"
+                        app:sriv_left_bottom_corner_radius="50dip"
+                        app:sriv_left_top_corner_radius="50dip"
+                        app:sriv_right_bottom_corner_radius="50dip"
+                        app:sriv_right_top_corner_radius="50dip"
+                        app:sriv_border_width="2dip"
+                        app:sriv_border_color="@android:color/white"
+                        />
+
+            </RelativeLayout>
+
+                <TextView
+                    android:layout_margin="2dp"
+                    android:textColor="@android:color/background_dark"
+                    android:id="@+id/text_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="12dp"
+                    android:layout_width="280dp"
+                    android:textColor="@android:color/background_dark"
+                    android:id="@+id/text_intro"
+                    android:layout_height="50dp" />
+                <LinearLayout
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal"
+                    android:layout_width="290dp"
+                    android:layout_height="28dp">
+
+                    <Button
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:id="@+id/btnThumbsUp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dip"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="5dip"
+                        android:background="@drawable/bg_button_pink"
+                        android:text="点 赞"
+                        android:textSize="12dp"
+                        android:onClick="testONClick"
+                        />
+
+                    <Button
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:id="@+id/btn_add_favor"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dip"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="5dip"
+                        android:background="@drawable/bg_button_pink"
+                        android:text="收 藏"
+                        android:textSize="12dp"
+                        />
+                    <Button
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:id="@+id/btn_add_friend"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dip"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="5dip"
+                        android:background="@drawable/bg_button_pink"
+                        android:text="加好友"
+                        android:textSize="12dp"
+                        />
+                    <Button
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:id="@+id/btn_add_message"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dip"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="5dip"
+                        android:background="@drawable/bg_button_pink"
+                        android:text="发消息"
+                        android:textSize="12dp"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="top"
+                android:minHeight="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:titleMarginTop="15dp" />
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabLayout"
+                style="@style/TabLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+</merge>
