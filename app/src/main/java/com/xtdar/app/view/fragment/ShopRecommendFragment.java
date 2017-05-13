@@ -1,6 +1,5 @@
 package com.xtdar.app.view.fragment;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,16 +15,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xtdar.app.R;
-import com.xtdar.app.adapter.RecyclerViewAdapter;
 import com.xtdar.app.adapter.RecyclerViewAdapterForShopProduct;
-import com.xtdar.app.loader.GlideImageLoader;
 import com.xtdar.app.model.ShopList;
 import com.xtdar.app.model.UserList;
-import com.xtdar.app.view.activity.GetUserActivity;
-import com.youth.banner.Banner;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -90,7 +84,7 @@ public class ShopRecommendFragment extends Fragment implements RecyclerViewAdapt
 
     @Override
     public void onItemClick(int position, String data) {
-        //getActivity().startActivity(new Intent(getActivity(), GetUserActivity.class));
+        //getActivity().startActivity(new Intent(getActivity(), DetailActivity.class));
         Toast.makeText(getContext(),"你点击了位置："+String.valueOf(position)+"-标题："+data,Toast.LENGTH_SHORT).show();
     }
 

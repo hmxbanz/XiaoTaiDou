@@ -2,7 +2,7 @@ package com.xtdar.app.presenter;
 
 import android.content.Context;
 
-import com.xtdar.app.view.activity.GetUserActivity;
+import com.xtdar.app.view.activity.DetailActivity;
 
 /**
  * Created by hmxbanz on 2017/4/5.
@@ -10,11 +10,11 @@ import com.xtdar.app.view.activity.GetUserActivity;
 
 public class GetUserPresenter {
     private Context mContext;
-    private GetUserActivity mActivity;
+    private DetailActivity mActivity;
 
     public GetUserPresenter(Context context){
         this.mContext=context;
-        this.mActivity= (GetUserActivity) context;
+        this.mActivity= (DetailActivity) context;
     }
 
     public void init() {

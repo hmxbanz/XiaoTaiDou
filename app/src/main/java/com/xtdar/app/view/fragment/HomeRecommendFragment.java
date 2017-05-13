@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.xtdar.app.loader.GlideImageLoader;
 import com.xtdar.app.model.UserList;
+import com.xtdar.app.view.activity.DetailActivity;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;
@@ -25,7 +26,6 @@ import java.util.List;
 
 import com.xtdar.app.R;
 import com.xtdar.app.adapter.RecyclerViewAdapter;
-import com.xtdar.app.view.activity.GetUserActivity;
 
 /**
  * Created by AMing on 16/6/21.
@@ -112,7 +112,7 @@ public class HomeRecommendFragment extends Fragment implements RecyclerViewAdapt
 
     @Override
     public void onItemClick(int position, String data) {
-        getActivity().startActivity(new Intent(getActivity(), GetUserActivity.class));
+        getActivity().startActivity(new Intent(getActivity(), DetailActivity.class));
         Toast.makeText(getContext(),"你点击了位置："+String.valueOf(position)+"-标题："+data,Toast.LENGTH_SHORT).show();
     }
 

@@ -177,7 +177,8 @@
         <activity android:name=".view.activity.LoginActivity" />
         <activity android:name=".view.activity.RegisterActivity" />
         <activity android:name=".view.activity.ForgetPasswordActivity" />
-        <activity android:name=".view.activity.GetUserActivity"
+        <activity android:name=".view.activity.DetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".view.activity.FeedbackActivity" />
         <activity android:name=".view.activity.FavorActivity" />

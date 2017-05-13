@@ -182,7 +182,7 @@ public class ContactsActivity extends BaseActivity implements View.OnClickListen
     }
 
     private void startFriendDetailsPage(User user) {
-        Intent intent = new Intent(this, GetUserActivity.class);
+        Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra("type", 2);
         //intent.putExtra("user", user);
         startActivity(intent);
