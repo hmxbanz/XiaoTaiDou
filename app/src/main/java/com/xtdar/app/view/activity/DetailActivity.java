@@ -117,7 +117,7 @@ public class DetailActivity extends AppCompatActivity implements RecyclerViewAda
         });
 
         String url = "http://baobab.wdjcdn.com/14564977406580.mp4";
-         videoPlayer= (StandardGSYVideoPlayer) findViewById(R.id.detail_player);
+        videoPlayer= (StandardGSYVideoPlayer) findViewById(R.id.detail_player);
         videoPlayer.setUp(url, false, null, "");
         //增加封面
         ImageView imageView = new ImageView(this);
@@ -203,8 +203,8 @@ public class DetailActivity extends AppCompatActivity implements RecyclerViewAda
         mFragments.add(InfoFragment.getInstance());
         mFragments.add(FriendConditionFragment.getInstance());
         for (String title : mTabTitles) {
-           // mFragments.add(LiftShareFragment.getInstance(title));
-           // break;
+            // mFragments.add(LiftShareFragment.getInstance(title));
+            // break;
         }
         mFragments.add(LiftShareFragment.getInstance("个人资料"));
 
@@ -240,26 +240,26 @@ public class DetailActivity extends AppCompatActivity implements RecyclerViewAda
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.img_avator:
-            ArrayList<ImageInfo> imageInfo=new ArrayList<>();
-            ImageInfo img=new ImageInfo();
-            img.setImageViewWidth(5);
-            img.setImageViewHeight(5);
-            img.setImageViewX(200);
-            img.setImageViewY(200);
-            img.setBigImageUrl("http://www.xtdar.com//Images/User/2017/02/02/2017020223391971_b.jpg");
-            img.setThumbnailUrl("http://www.xtdar.com/Images/User/2017/02/02/2017020223391971_s.jpg");
+                ArrayList<ImageInfo> imageInfo=new ArrayList<>();
+                ImageInfo img=new ImageInfo();
+                img.setImageViewWidth(5);
+                img.setImageViewHeight(5);
+                img.setImageViewX(200);
+                img.setImageViewY(200);
+                img.setBigImageUrl("http://www.xtdar.com//Images/User/2017/02/02/2017020223391971_b.jpg");
+                img.setThumbnailUrl("http://www.xtdar.com/Images/User/2017/02/02/2017020223391971_s.jpg");
 
-            imageInfo.add(img);
+                imageInfo.add(img);
 
-            NineGridView.setImageLoader(new GlideImageLoader());
+                NineGridView.setImageLoader(new GlideImageLoader());
 
-            Intent intent = new Intent(this, ImagePreviewActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putSerializable(ImagePreviewActivity.IMAGE_INFO, (Serializable) imageInfo);
-            bundle.putInt(ImagePreviewActivity.CURRENT_ITEM, 0);
-            intent.putExtras(bundle);
-            this.startActivity(intent);
-            ((Activity) this).overridePendingTransition(0, 0);
+                Intent intent = new Intent(this, ImagePreviewActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable(ImagePreviewActivity.IMAGE_INFO, (Serializable) imageInfo);
+                bundle.putInt(ImagePreviewActivity.CURRENT_ITEM, 0);
+                intent.putExtras(bundle);
+                this.startActivity(intent);
+                ((Activity) this).overridePendingTransition(0, 0);
                 break;
             case R.id.layout_register:
                 startActivity(new Intent(this,RegisterActivity.class));

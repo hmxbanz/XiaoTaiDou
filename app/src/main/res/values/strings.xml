@@ -46,10 +46,12 @@
     <string name="dialog_bottom_picture">拍照</string>
     <string name="dialog_bottom_import_from_local">从相册选择</string>
     <string name="share_dialog_cancel">取消</string>
-    <string name="layout_dialog_loading">正在加载</string>
+    <string name="layout_dialog_loading">正在加载...</string>
     <string name="string_upload_text">确认提交</string>
     <string name="search">搜索</string>
     <string name="new_friends">新的朋友</string>
     <string name="shop">商城</string>
     <string name="discovery">秀场</string>
+    <string name="find_password">找回密码</string>
+    <string name="register">注册</string>
 </resources>

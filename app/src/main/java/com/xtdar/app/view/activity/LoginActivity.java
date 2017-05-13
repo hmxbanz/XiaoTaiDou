@@ -22,6 +22,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private RelativeLayout mLayoutRegister;
     private TextView mTextForgetPassword;
     private LoginPresenter mLoginPresenter;
+    private TextView mTextRight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,29 +35,34 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
     private void initViews() {
+        layout_back = (RelativeLayout) findViewById(R.id.layout_back);
+        layout_back.setOnClickListener(this);
         mTextTitle =(TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("用户登录");
-        CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox);
-        Drawable drawable = this.getResources().getDrawable(R.drawable.selector_checkbox);
-        drawable.setBounds(0,0,50,50);
-        if(Build.VERSION.SDK_INT>=21)
-            drawable.setTint(getResources().getColor(R.color.mainColorBlue));
-        checkBox.setCompoundDrawables(drawable,null,null,null);
+        mTextTitle.setText("登录");
+        mTextRight =(TextView) findViewById(R.id.text_right);
+        mTextRight.setText("注册");
+        mTextRight.setOnClickListener(this);
+
 
         mTextForgetPassword = (TextView) findViewById(R.id.text_forget_password);
         mLayoutRegister = (RelativeLayout) findViewById(R.id.layout_register);
         mLayoutRegister.setOnClickListener(this);
         mTextForgetPassword.setOnClickListener(this);
+        mBtnLogin = (Button) findViewById(R.id.btn_login);
+        mBtnLogin.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.layout_register:
+            case R.id.layout_back:
+                finish();
+                break;
+            case R.id.text_right:
                 startActivity(new Intent(this,RegisterActivity.class));
                 break;
-            case R.id.text_forget_password:
-                startActivity(new Intent(this,ForgetPasswordActivity.class));
+            case R.id.btn_login:
+                startActivity(new Intent(this,Main2Activity.class));
         }
     }
 }

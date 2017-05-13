@@ -29,7 +29,7 @@
             android:src="@drawable/icon_arrow_right"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:tint="@color/garyLine"
+            android:tint="@color/grayLine"
             />
     </LinearLayout>
     <LinearLayout
@@ -52,7 +52,7 @@
             android:src="@drawable/icon_arrow_right"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:tint="@color/garyLine"
+            android:tint="@color/grayLine"
             />
     </LinearLayout>
 
@@ -139,7 +139,7 @@
             android:src="@drawable/icon_arrow_right"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:tint="@color/garyLine"
+            android:tint="@color/grayLine"
             />
     </LinearLayout>
     <LinearLayout
@@ -162,26 +162,27 @@
             android:src="@drawable/icon_arrow_right"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:tint="@color/garyLine"
+            android:tint="@color/grayLine"
             />
     </LinearLayout>
 
 
     <LinearLayout
+        android:id="@+id/layout_logoff"
         android:layout_marginTop="15dp"
         android:background="@drawable/bg_line2"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <TextView
-        style="@style/AppTitleStyle"
-        android:gravity="center"
-        android:text="退出登录"
-        android:textColor="@color/red"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent" />
+        <TextView
+            style="@style/AppTitleStyle"
+            android:gravity="center"
+            android:text="退出登录"
+            android:textColor="@color/red"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
     </LinearLayout>
     <TextView
         style="@style/AppTitleStyle"

@@ -18,9 +18,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.xtdar.app.common.PhotoUtils;
 import com.xtdar.app.view.activity.AlbumActivity;
+import com.xtdar.app.view.activity.DynamicActivity;
+import com.xtdar.app.view.activity.MeActivity;
 import com.xtdar.app.view.activity.SettingActivity;
 import com.xtdar.app.view.activity.FavorActivity;
 import com.xtdar.app.view.activity.UpdateActivity;
@@ -40,7 +43,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private static final int COMPAREVERSION = 54;
     public static final String SHOWRED = "SHOWRED";
     public static MineFragment mFragment = null;
-    private RelativeLayout mLayoutFavor,mLayoutFriend,mLayoutMsg,mLayoutHome;
+    private RelativeLayout mLayoutFavor,mLayoutDynamic,mLayoutMsg,mLayoutHome;
     private LinearLayout mLayoutUpdate,mLayoutFriendCondition,mLayoutVisitRecord,mLayoutVisitedByMe,mLayoutOrder,
             mLayoutConfig,mlayoutCertification,mLayoutAblum;
     private View mView;
@@ -52,6 +55,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     public static final int REQUEST_CODE_ASK_PERMISSIONS = 101;
     private Uri selectUri;
     private MaterialProgressBar progressBar;
+    private TextView mTxtMe;
 
     public static MineFragment getInstance() {
         if (mFragment == null) {
@@ -65,8 +69,6 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_mine, null);
         initViews();
-        setPortraitChangeListener();
-
 //        initData();
 //        BroadcastManager.getInstance(getActivity()).addAction(SealConst.CHANGEINFO, new BroadcastReceiver() {
 //            @Override
@@ -93,11 +95,15 @@ public class MineFragment extends Fragment implements View.OnClickListener {
 
         mLayoutFavor= (RelativeLayout) mView.findViewById(R.id.layout_favor);
         mLayoutFavor.setOnClickListener(this);
+        mLayoutDynamic= (RelativeLayout) mView.findViewById(R.id.layout_dynamic);
+        mLayoutDynamic.setOnClickListener(this);
         mLayoutVisitRecord= (LinearLayout) mView.findViewById(R.id.layout_visit_record);
         mLayoutVisitRecord.setOnClickListener(this);
 
         mLayoutAblum= (LinearLayout) mView.findViewById(R.id.layout_album);
         mLayoutAblum.setOnClickListener(this);
+        mTxtMe = (TextView) mView.findViewById(R.id.txt_me);
+        mTxtMe.setOnClickListener(this);
 
     }
 
@@ -114,12 +120,12 @@ public class MineFragment extends Fragment implements View.OnClickListener {
             case R.id.img_setting:
                 startActivity(new Intent(getActivity(), SettingActivity.class));
                 break;
-            case R.id.img_avator:
-                showPhotoDialog();
+            case R.id.txt_me:
+                startActivity(new Intent(getActivity(), MeActivity.class));
                 break;
-//            case R.id.layout_update:
-//                startActivity(new Intent(getActivity(), UpdateActivity.class));
-//                break;
+            case R.id.layout_dynamic:
+                startActivity(new Intent(getActivity(), DynamicActivity.class));
+                break;
             case R.id.layout_favor:
                 startActivity(new Intent(getActivity(), FavorActivity.class));
                 break;
@@ -129,84 +135,6 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    /**
-     * 弹出底部框
-     */
-    @TargetApi(23)
-    private void showPhotoDialog() {
-        if (dialog != null && dialog.isShowing()) {
-            dialog.dismiss();
-        }
 
-        dialog = new BottomMenuDialog(getContext());
-        dialog.setConfirmListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                if (dialog != null && dialog.isShowing()) {
-                    dialog.dismiss();
-                }
-                if (Build.VERSION.SDK_INT >= 23) {
-                    int checkPermission = getContext().checkSelfPermission(Manifest.permission.CAMERA);
-                    if (checkPermission != PackageManager.PERMISSION_GRANTED) {
-                        if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)) {
-                            requestPermissions(new String[] {Manifest.permission.CAMERA}, REQUEST_CODE_ASK_PERMISSIONS);
-                        } else {
-                            new AlertDialog.Builder(getContext())
-                                    .setMessage("您需要在设置里打开相机权限。")
-                                    .setPositiveButton("确认", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            requestPermissions(new String[] {Manifest.permission.CAMERA}, REQUEST_CODE_ASK_PERMISSIONS);
-                                        }
-                                    })
-                                    .setNegativeButton("取消", null)
-                                    .create().show();
-                        }
-                        return;
-                    }
-                }
-                photoUtils.takePicture(getActivity());
-            }
-        });
-        dialog.setMiddleListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                if (dialog != null && dialog.isShowing()) {
-                    dialog.dismiss();
-                }
-                photoUtils.selectPicture(getActivity());
-            }
-        });
-        dialog.show();
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
-            case PhotoUtils.INTENT_CROP:
-            case PhotoUtils.INTENT_TAKE:
-            case PhotoUtils.INTENT_SELECT:
-                photoUtils.onActivityResult(getActivity(), requestCode, resultCode, data);
-                break;
-        }
-    }
-
-    private void setPortraitChangeListener() {
-        photoUtils = new PhotoUtils(new PhotoUtils.OnPhotoResultListener() {
-            @Override
-            public void onPhotoResult(Uri uri) {
-                if (uri != null && !TextUtils.isEmpty(uri.getPath())) {
-                    //selectUri = uri;
-                    LoadDialog.show(getContext());
-                    //request(GET_QI_NIU_TOKEN);
-                }
-            }
-
-            @Override
-            public void onPhotoCancel() {
-
-            }
-        });
-    }
 
 }

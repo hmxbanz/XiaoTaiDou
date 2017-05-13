@@ -9,7 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xtdar.app.common.NToast;
-import com.xtdar.app.presenter.ConfigPresenter;
+import com.xtdar.app.presenter.SettingPresenter;
 
 import com.xtdar.app.R;
 import com.xtdar.app.widget.DialogWithYesOrNoUtils;
@@ -18,15 +18,15 @@ import java.io.File;
 
 
 public class SettingActivity extends BaseActivity implements View.OnClickListener {
-    private LinearLayout mLayoutAbout,mLayoutClear,mLayoutFeeback;
-    private ConfigPresenter mConfigPresenter;
+    private LinearLayout mLayoutAbout,mLayoutClear,mLayoutFeeback,mLayoutLogoff;
+    private SettingPresenter mConfigPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
         initViews();
-        mConfigPresenter=new ConfigPresenter(this);
+        mConfigPresenter=new SettingPresenter(this);
         mConfigPresenter.init();
     }
     public void initViews(){
@@ -38,6 +38,8 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
         mLayoutClear.setOnClickListener(this);
         mLayoutFeeback= (LinearLayout) findViewById(R.id.layout_feedback);
         mLayoutFeeback.setOnClickListener(this);
+        mLayoutLogoff= (LinearLayout) findViewById(R.id.layout_logoff);
+        mLayoutLogoff.setOnClickListener(this);
 
         mTextTitle =(TextView) findViewById(R.id.text_title);
         mTextTitle.setText("设置");
@@ -58,6 +60,17 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                         File file = new File(Environment.getExternalStorageDirectory().getPath() + getPackageName());
                         //deleteFile(file);
                         NToast.shortToast(SettingActivity.this, "消除成功");
+                    }
+
+                });
+                break;
+            case R.id.layout_logoff:
+                DialogWithYesOrNoUtils.getInstance().showDialog(this, "确定要退出小泰斗吗?", new DialogWithYesOrNoUtils.DialogCallBack() {
+                    @Override
+                    public void executeEvent() {
+                        File file = new File(Environment.getExternalStorageDirectory().getPath() + getPackageName());
+                        //deleteFile(file);
+                        NToast.shortToast(SettingActivity.this, "退出成功");
                     }
 
                 });

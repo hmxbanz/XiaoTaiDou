@@ -73,11 +73,12 @@ android {
         abortOnError false
         disable 'MissingTranslation'
     }
-//编译时内在溢出要加这段或在项目gradle.properties 中加 org.gradle.jvmargs=-Xmx5120m
+    //编译时内在溢出要加这段或在项目gradle.properties 中加 org.gradle.jvmargs=-Xmx5120m
 //    dexOptions {
 //        incremental true
 //        javaMaxHeapSize "4g"
 //    }
+
 
 }
 

@@ -33,7 +33,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/garyLine" />
+        android:background="@color/grayLine" />
     <LinearLayout
         android:id="@+id/layout_modify_pass"
         android:paddingLeft="10dp"
@@ -55,7 +55,7 @@
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@color/garyLine" />
+            android:background="@color/grayLine" />
 
         <TextView
             android:id="@+id/btn_confirm"

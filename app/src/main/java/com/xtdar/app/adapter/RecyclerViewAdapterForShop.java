@@ -44,8 +44,8 @@ public class RecyclerViewAdapterForShop extends RecyclerView.Adapter<RecyclerVie
     public View getFooterView() {
         return mFooterView;
     }
-    public void setFooterView(View headerView) {
-        mFooterView = headerView;
+    public void setFooterView(View footerView) {
+        mFooterView = footerView;
         notifyItemInserted(0);//告知Adapter首位置项变动了
     }
 
@@ -191,11 +191,11 @@ public RecyclerViewAdapterForShop(List<Category> l, Context c){
 
         @Override
         public void onClick(View v) {
-            //mListener.onItemClick(getAdapterPosition(),"a");
+
             switch (v.getId())
             {
                 case R.id.list_item_layout:
-
+                    mListener.onItemClick(getAdapterPosition(),"a");
 
             }
         }

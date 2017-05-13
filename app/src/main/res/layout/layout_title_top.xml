@@ -4,6 +4,7 @@
     android:layout_height="45dp"
     android:background="@color/white"
     android:orientation="vertical"
+    android:layout_marginBottom="2dp"
     android:id="@+id/layout_title_top">
 
     <LinearLayout
@@ -83,10 +84,4 @@
                 android:textSize="18dp" />
         </RelativeLayout>
     </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#dfdfdd" />
 </LinearLayout>
-

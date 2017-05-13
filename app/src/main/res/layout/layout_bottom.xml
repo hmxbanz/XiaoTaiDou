@@ -10,7 +10,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.2dp"
-        android:background="@color/garyLine" />
+        android:background="@color/grayLine" />
 
     <!-- 底部导航 -->
     <LinearLayout

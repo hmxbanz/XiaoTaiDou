@@ -166,7 +166,7 @@ public class Main2Activity extends BaseActivity implements View.OnClickListener{
                 break;
             case R.id.tab_layout_me:
                 mViewPager.setCurrentItem(3, false);
-                //startActivity(new Intent(this,LoginActivity.class));
+                startActivity(new Intent(this,LoginActivity.class));
                 //mMineRed.setVisibility(View.GONE);
                 break;
         }

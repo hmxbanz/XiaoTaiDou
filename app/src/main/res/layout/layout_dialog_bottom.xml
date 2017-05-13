@@ -20,7 +20,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/garyLine" />
+        android:background="@color/grayLine" />
 
     <Button
         android:id="@+id/localPhotosBtn"
@@ -36,7 +36,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/garyLine" />
+        android:background="@color/grayLine" />
 
     <Button
         android:id="@+id/cancelBtn"

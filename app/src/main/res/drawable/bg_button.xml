@@ -12,6 +12,6 @@
     <solid android:color="@color/titleBlue" />
     <!-- 虚线的高度 -->
     <size android:height="1dp" />
-    <corners android:radius="5dp" />
+    <corners android:radius="20dp" />
 
 </shape>

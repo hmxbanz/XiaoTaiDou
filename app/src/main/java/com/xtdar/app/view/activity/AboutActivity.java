@@ -7,19 +7,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xtdar.app.R;
-import com.xtdar.app.presenter.ConfigPresenter;
+import com.xtdar.app.presenter.SettingPresenter;
 
 
 public class AboutActivity extends BaseActivity implements View.OnClickListener {
     private LinearLayout mLayoutModifyPass;
-    private ConfigPresenter mConfigPresenter;
+    private SettingPresenter mConfigPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
         initViews();
-        //mConfigPresenter=new ConfigPresenter(this);
+        //mConfigPresenter=new SettingPresenter(this);
         //mConfigPresenter.init();
     }
     public void initViews(){

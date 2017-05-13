@@ -1,8 +1,11 @@
 package com.xtdar.app.view.activity;
 
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -30,6 +33,12 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         layout_back.setOnClickListener(this);
         mTextTitle = (TextView) findViewById(R.id.text_title);
         mTextTitle.setText("用户注册");
+        CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox);
+        Drawable drawable = this.getResources().getDrawable(R.drawable.selector_checkbox);
+        drawable.setBounds(0,0,50,50);
+        if(Build.VERSION.SDK_INT>=21)
+            drawable.setTint(getResources().getColor(R.color.mainColorBlue));
+        checkBox.setCompoundDrawables(drawable,null,null,null);
     }
 
 

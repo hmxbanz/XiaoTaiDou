@@ -1,11 +1,13 @@
 package com.xtdar.app.view.fragment;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.media.session.MediaSessionCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +23,10 @@ import java.util.List;
 import com.xtdar.app.R;
 import com.xtdar.app.adapter.RecyclerViewAdapter;
 import com.xtdar.app.adapter.RecyclerViewAdapterForShop;
+import com.xtdar.app.model.Category;
 import com.xtdar.app.model.CategoryList;
 import com.xtdar.app.model.UserList;
+import com.xtdar.app.view.activity.CategoryActivity;
 
 /**
  * Created by AMing on 16/6/21.
@@ -62,11 +67,22 @@ public class ShopFragment extends Fragment  {
         GridLayoutManager gridLayoutManager=new GridLayoutManager(getContext(),4);
         recycleViewTop.setLayoutManager(gridLayoutManager);
         RecyclerViewAdapterForShop dataAdapter2 = new RecyclerViewAdapterForShop(CategoryList.getData(), getContext());
+        dataAdapter2.setOnItemClickListener(new RecyclerViewAdapterForShop.ItemClickListener() {
+            @Override
+            public void onItemClick(int position, String data) {
+                Toast.makeText(getActivity(), "位置在："+String.valueOf(position), Toast.LENGTH_LONG).show();
+            }
+        });
         dataAdapter2.setFooterView(LayoutInflater.from(getContext()).inflate(R.layout.recyclerview_shop_category_footer,null));
         recycleViewTop.setAdapter(dataAdapter2);
+        dataAdapter2.getFooterView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "底部", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getContext(), CategoryActivity.class));
+            }
+        });
         recycleViewTop.setNestedScrollingEnabled(false);
-
-
 
 
         mTextSearch= (TextView) view.findViewById(R.id.txt_search);

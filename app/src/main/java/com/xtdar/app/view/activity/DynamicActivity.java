@@ -28,7 +28,7 @@ public class DynamicActivity extends BaseActivity implements View.OnClickListene
         layout_back= (RelativeLayout) findViewById(R.id.layout_back);
         layout_back.setOnClickListener(this);
         mTextTitle = (TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("发新动态");
+        mTextTitle.setText("发布");
         mContent = (EditText) findViewById(R.id.content);
         mContent.setOnClickListener(this);
         mBtnSubmit = (Button) findViewById(R.id.btn_submit);

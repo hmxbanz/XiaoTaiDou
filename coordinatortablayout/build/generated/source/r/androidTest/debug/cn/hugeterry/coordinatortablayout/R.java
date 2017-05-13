@@ -753,10 +753,6 @@ public final class R {
         public static final int auto = 0x7f0c0025;
         public static final int beginning = 0x7f0c0038;
         public static final int bottom = 0x7f0c0026;
-        public static final int btnThumbsUp = 0x7f0c009b;
-        public static final int btn_add_favor = 0x7f0c009c;
-        public static final int btn_add_friend = 0x7f0c009d;
-        public static final int btn_add_message = 0x7f0c009e;
         public static final int buttonPanel = 0x7f0c004b;
         public static final int cancel_action = 0x7f0c0083;
         public static final int center = 0x7f0c0027;
@@ -797,7 +793,6 @@ public final class R {
         public static final int icon_group = 0x7f0c0090;
         public static final int ifRoom = 0x7f0c003c;
         public static final int image = 0x7f0c0046;
-        public static final int img_avator = 0x7f0c0098;
         public static final int img_top_bg = 0x7f0c0097;
         public static final int info = 0x7f0c008c;
         public static final int item_touch_helper_previous_elevation = 0x7f0c0005;
@@ -807,7 +802,7 @@ public final class R {
         public static final int line3 = 0x7f0c0093;
         public static final int listMode = 0x7f0c000f;
         public static final int list_item = 0x7f0c0048;
-        public static final int masked = 0x7f0c00a2;
+        public static final int masked = 0x7f0c009b;
         public static final int media_actions = 0x7f0c0085;
         public static final int middle = 0x7f0c0039;
         public static final int mini = 0x7f0c0037;
@@ -862,22 +857,20 @@ public final class R {
         public static final int status_bar_latest_event_content = 0x7f0c0084;
         public static final int submenuarrow = 0x7f0c005e;
         public static final int submit_area = 0x7f0c006f;
-        public static final int tabLayout = 0x7f0c00a0;
+        public static final int tabLayout = 0x7f0c0099;
         public static final int tabMode = 0x7f0c0011;
         public static final int text = 0x7f0c0094;
         public static final int text2 = 0x7f0c0092;
         public static final int textSpacerNoButtons = 0x7f0c0052;
         public static final int textSpacerNoTitle = 0x7f0c0051;
         public static final int text_input_password_toggle = 0x7f0c007e;
-        public static final int text_intro = 0x7f0c009a;
-        public static final int text_nickname = 0x7f0c0099;
         public static final int textinput_counter = 0x7f0c0009;
         public static final int textinput_error = 0x7f0c000a;
         public static final int time = 0x7f0c008a;
         public static final int title = 0x7f0c004a;
         public static final int titleDividerNoCustom = 0x7f0c0059;
         public static final int title_template = 0x7f0c0057;
-        public static final int toolbar = 0x7f0c009f;
+        public static final int toolbar = 0x7f0c0098;
         public static final int top = 0x7f0c002f;
         public static final int topPanel = 0x7f0c0056;
         public static final int touch_outside = 0x7f0c0075;
@@ -886,7 +879,7 @@ public final class R {
         public static final int up = 0x7f0c000d;
         public static final int useLogo = 0x7f0c0018;
         public static final int view_offset_helper = 0x7f0c000e;
-        public static final int visible = 0x7f0c00a1;
+        public static final int visible = 0x7f0c009a;
         public static final int withText = 0x7f0c003e;
         public static final int wrap_content = 0x7f0c0024;
     }

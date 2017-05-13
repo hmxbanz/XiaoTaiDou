@@ -7,9 +7,9 @@
         android:top="5dp" />
     <stroke
         android:width="0dp"
-        android:color="@color/garyLine" />
+        android:color="@color/grayLine" />
 
-    <solid android:color="@color/garyLine" />
+    <solid android:color="@color/grayLine" />
     <!-- 虚线的高度 -->
     <size android:height="1dp" />
     <padding

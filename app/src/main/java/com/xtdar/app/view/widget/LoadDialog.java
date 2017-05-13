@@ -10,9 +10,8 @@ import android.view.WindowManager;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.xtdar.app.common.NToast;
-
 import com.xtdar.app.R;
+import com.xtdar.app.common.NToast;
 
 public class LoadDialog extends Dialog {
 
@@ -38,7 +37,7 @@ public class LoadDialog extends Dialog {
      * @param canNotCancel boolean
      * @param tipMsg       String
      */
-    public LoadDialog(final Context ctx, boolean canNotCancel, String tipMsg) {
+    public LoadDialog(final Context ctx, boolean canNotCancel, String tipMsg,boolean isTranslucent) {
         super(ctx);
 
         this.canNotCancel = canNotCancel;
@@ -53,8 +52,12 @@ public class LoadDialog extends Dialog {
 
         Window window = getWindow();
         WindowManager.LayoutParams attributesParams = window.getAttributes();
-        attributesParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-        attributesParams.dimAmount = 0.5f;
+        //设置窗体背景透明度
+        if(isTranslucent) {
+            attributesParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+            attributesParams.dimAmount = 0.5f;
+        }
+        attributesParams.alpha=0.7f;//设置内容透明度
         window.setAttributes(attributesParams);
 
         window.setLayout(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -77,7 +80,11 @@ public class LoadDialog extends Dialog {
      * @param context
      */
     public static void show(Context context) {
-        show(context, null, false);
+        show(context, null, false,false);
+    }
+    //可让背景有半透明黑色遮罩
+    public static void show(Context context,boolean isTranslucent) {
+        show(context, null, false,true);
     }
 
     /**
@@ -87,7 +94,7 @@ public class LoadDialog extends Dialog {
      * @param message String
      */
     public static void show(Context context, String message) {
-        show(context, message, false);
+        show(context, message, false,false);
     }
 
     /**
@@ -97,7 +104,7 @@ public class LoadDialog extends Dialog {
      * @param message  String, show the message to user when isCancel is true.
      * @param isCancel boolean, true is can't dimiss，false is can dimiss
      */
-    private static void show(Context context, String message, boolean isCancel) {
+    private static void show(Context context, String message, boolean isCancel,boolean isTranslucent) {
         if (context instanceof Activity) {
             if (((Activity) context).isFinishing()) {
                 return;
@@ -106,7 +113,7 @@ public class LoadDialog extends Dialog {
         if (loadDialog != null && loadDialog.isShowing()) {
             return;
         }
-        loadDialog = new LoadDialog(context, isCancel, message);
+        loadDialog = new LoadDialog(context, isCancel, message,isTranslucent);
         loadDialog.show();
     }
 

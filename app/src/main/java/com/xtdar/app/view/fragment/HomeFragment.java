@@ -1,5 +1,6 @@
 package com.xtdar.app.view.fragment;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,12 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.xtdar.app.R;
+import com.xtdar.app.view.activity.SearchActivity;
 
 /**
  * Created by AMing on 16/6/21.
  * Company RongCloud
  */
-public class HomeFragment extends Fragment  {
+public class HomeFragment extends Fragment implements View.OnClickListener  {
     private final int CURRENTVIEWPAGEINDEX =1;
     private final int MAXCACHEVIEWPAGES =3;
     private ViewPager mViewPager;
@@ -52,6 +54,7 @@ public class HomeFragment extends Fragment  {
 
     private void initViews() {
         mTextSearch= (TextView) view.findViewById(R.id.txt_search);
+        mTextSearch.setOnClickListener(this);
         Drawable icon_search=getActivity().getResources().getDrawable(R.drawable.icon_search);
         icon_search.setBounds(0,0,50,50);
         //if(Build.VERSION.SDK_INT>+21)
@@ -99,4 +102,12 @@ public class HomeFragment extends Fragment  {
         super.onDestroy();
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.txt_search:
+                getActivity().startActivity(new Intent(getContext(), SearchActivity.class));
+                break;
+        }
+    }
 }
