@@ -2,13 +2,16 @@ package com.xtdar.app.view.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.transition.Explode;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -38,6 +41,12 @@ public class Main2Activity extends BaseActivity implements View.OnClickListener{
     private View viewMainTop;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // 设置一个exit transition
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+            getWindow().setEnterTransition(new Explode());
+            getWindow().setExitTransition(new Explode());
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         initViews();
@@ -220,5 +229,13 @@ public class Main2Activity extends BaseActivity implements View.OnClickListener{
                     handleResult(f, requestCode, resultCode, data);
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (ShowFragment.getInstance().onBackPressed()) {
+            return;
+        }
+        finish();
     }
 }

@@ -121,4 +121,10 @@ public class ShowFragment extends Fragment  {
         if (recyclerBaseAdapter != null)
             recyclerBaseAdapter.notifyDataSetChanged();
     }
+    public boolean onBackPressed() {
+        if (StandardGSYVideoPlayer.backFromWindowFull(getActivity())) {
+            return true;
+        }
+        return false;
+    }
 }

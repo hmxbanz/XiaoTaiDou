@@ -103,13 +103,13 @@ public class CommonUtil {
 
     public static void hideSupportActionBar(Context context, boolean actionBar, boolean statusBar) {
         if (actionBar) {
-            Activity appCompatActivity = CommonUtil.getAppCompActivity(context);
+            AppCompatActivity appCompatActivity = CommonUtil.getAppCompActivity(context);
             if (appCompatActivity != null) {
-//                ActionBar ab = appCompatActivity.getSupportActionBar();
-//                if (ab != null) {
-//                    ab.setShowHideAnimationEnabled(false);
-//                    ab.hide();
-//                }
+                ActionBar ab = appCompatActivity.getSupportActionBar();
+                if (ab != null) {
+                    ab.setShowHideAnimationEnabled(false);
+                    ab.hide();
+                }
             }
         }
         if (statusBar) {
@@ -126,14 +126,14 @@ public class CommonUtil {
 
     public static void showSupportActionBar(Context context, boolean actionBar, boolean statusBar) {
         if (actionBar) {
-//            AppCompatActivity appCompatActivity = CommonUtil.getAppCompActivity(context);
-//            if (appCompatActivity != null) {
-//                ActionBar ab = appCompatActivity.getSupportActionBar();
-//                if (ab != null) {
-//                    ab.setShowHideAnimationEnabled(false);
-//                    ab.show();
-//                }
-//            }
+            AppCompatActivity appCompatActivity = CommonUtil.getAppCompActivity(context);
+            if (appCompatActivity != null) {
+                ActionBar ab = appCompatActivity.getSupportActionBar();
+                if (ab != null) {
+                    ab.setShowHideAnimationEnabled(false);
+                    ab.show();
+                }
+            }
         }
 
         if (statusBar) {
@@ -173,17 +173,16 @@ public class CommonUtil {
      * @param context
      * @return AppCompatActivity if it's not null
      */
-    public static Activity getAppCompActivity(Context context) {
+
+    public static AppCompatActivity getAppCompActivity(Context context) {
         if (context == null) return null;
-        //if (context instanceof AppCompatActivity) {
-            if (context instanceof Activity) {
-            return (Activity) context;
+        if (context instanceof AppCompatActivity) {
+            return (AppCompatActivity) context;
         } else if (context instanceof ContextThemeWrapper) {
             return getAppCompActivity(((ContextThemeWrapper) context).getBaseContext());
         }
         return null;
     }
-
 
     /**
      * dip转为PX
