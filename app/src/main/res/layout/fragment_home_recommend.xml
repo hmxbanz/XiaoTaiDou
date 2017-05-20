@@ -36,7 +36,7 @@
                         <TextView
                             android:layout_below="@+id/nav_img_new"
                             android:gravity="center"
-                            android:textSize="20dp"
+                            android:textSize="16dp"
                             android:textColor="@color/black"
                             android:text="@string/nav_text_new"
                             android:layout_width="match_parent"

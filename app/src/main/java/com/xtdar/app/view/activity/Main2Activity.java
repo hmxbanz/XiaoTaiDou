@@ -16,18 +16,15 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.xtdar.app.R;
 import com.xtdar.app.view.fragment.HomeFragment;
-import com.xtdar.app.view.fragment.LiftShareFragment;
+import com.xtdar.app.view.fragment.MineFragment;
 import com.xtdar.app.view.fragment.ShopFragment;
 import com.xtdar.app.view.fragment.ShowFragment;
 import com.xtdar.app.view.widget.DragPointView;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.xtdar.app.R;
-
-import com.xtdar.app.view.fragment.MineFragment;
 
 public class Main2Activity extends BaseActivity implements View.OnClickListener{
     private final int CURRENTVIEWPAGEINDEX =0;

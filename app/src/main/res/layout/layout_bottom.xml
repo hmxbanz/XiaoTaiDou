@@ -41,8 +41,8 @@
 
                     <ImageView
                         android:id="@+id/tab_img_home"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_centerHorizontal="true"
                         android:background="#ffffff"
                         android:focusable="false"
@@ -57,21 +57,10 @@
                         android:layout_marginTop="2dp"
                         android:text="@string/home"
                         android:textColor="#abadbb"
-                        android:textSize="12dp" />
+                        android:textSize="10dp" />
 
                 </RelativeLayout>
 
-                <com.xtdar.app.view.widget.DragPointView
-                    android:id="@+id/seal_num"
-                    android:layout_width="19dp"
-                    android:layout_height="19dp"
-                    android:layout_gravity="right"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginRight="19dp"
-                    android:layout_toRightOf="@id/ll"
-                    android:textColor="@android:color/white"
-                    android:textSize="12sp"
-                    android:visibility="invisible" />
 
             </FrameLayout>
 
@@ -97,8 +86,8 @@
 
                     <ImageView
                         android:id="@+id/tab_img_shop"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_centerHorizontal="true"
                         android:background="#ffffff"
                         android:focusable="false"
@@ -113,21 +102,11 @@
                         android:layout_marginTop="2dp"
                         android:text="@string/shop"
                         android:textColor="#abadbb"
-                        android:textSize="12dp" />
+                        android:textSize="10dp" />
 
                 </RelativeLayout>
 
-                <com.xtdar.app.view.widget.DragPointView
-                    android:id="@+id/seal_num2"
-                    android:layout_width="19dp"
-                    android:layout_height="19dp"
-                    android:layout_gravity="right"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginRight="19dp"
-                    android:layout_toRightOf="@id/ll"
-                    android:textColor="@android:color/white"
-                    android:textSize="12sp"
-                    android:visibility="invisible" />
+
 
             </FrameLayout>
 
@@ -164,8 +143,8 @@
 
                     <ImageView
                         android:id="@+id/tab_img_discovery"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_centerHorizontal="true"
                         android:background="#ffffff"
                         android:focusable="false"
@@ -180,12 +159,12 @@
                         android:layout_marginTop="2dp"
                         android:text="@string/discovery"
                         android:textColor="#abadbb"
-                        android:textSize="12dp" />
+                        android:textSize="10dp" />
 
                 </RelativeLayout>
 
                 <com.xtdar.app.view.widget.DragPointView
-                    android:id="@+id/seal_num33"
+                    android:id="@+id/seal_num"
                     android:layout_width="19dp"
                     android:layout_height="19dp"
                     android:layout_gravity="right"
@@ -218,8 +197,8 @@
                     android:gravity="center">
                     <ImageView
                         android:id="@+id/tab_img_me"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_centerHorizontal="true"
                         android:background="#ffffff"
                         android:focusable="false"
@@ -233,7 +212,7 @@
                         android:layout_marginTop="2.2dp"
                         android:text="@string/me"
                         android:textColor="#abadbb"
-                        android:textSize="12dp" />
+                        android:textSize="10dp" />
                 </RelativeLayout>
 
 

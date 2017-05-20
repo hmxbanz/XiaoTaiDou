@@ -97,9 +97,9 @@
         app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
         android:layout_gravity="bottom"
         app:tabIndicatorHeight="3dp"
-        app:tabSelectedTextColor="@color/titleBlue"
+        app:tabSelectedTextColor="@color/appgreen"
         app:tabTextColor="@color/appTextColor"
-        app:tabIndicatorColor="@color/titleBlue"
+        app:tabIndicatorColor="@color/appgreen"
         >
 
     </android.support.design.widget.TabLayout>

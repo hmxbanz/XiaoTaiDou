@@ -62,7 +62,7 @@ public class DetailActivity extends AppCompatActivity implements RecyclerViewAda
     private CoordinatorTabLayout mCoordinatorTabLayout;
     private int[] mImageArray, mColorArray;
     private ArrayList<Fragment> mFragments;
-    private final String[] mTabTitles = {"个人资料", "择偶条件", "动态", "相册"};
+    private final String[] mTabTitles = {"个人资料", "条件", "动态", "相册"};
     private ViewPager mViewPager;
     private TextView mTextNickName, mTextIntro;
     private Button mBtnThumbsUp, mBtnAddFavor, mBtnAddFriend, mBtnAddMessage;
@@ -90,7 +90,7 @@ public class DetailActivity extends AppCompatActivity implements RecyclerViewAda
         gridLayoutManager=new GridLayoutManager(this,2);
         recycleView.setLayoutManager(gridLayoutManager);
         dataAdapter = new RecyclerViewAdapter(UserList.getData(), this);
-        dataAdapter.setFooterView(LayoutInflater.from(this).inflate(R.layout.recyclerview_footer,null));
+        //dataAdapter.setFooterView(LayoutInflater.from(this).inflate(R.layout.recyclerview_footer,null));
         recycleView.setAdapter(dataAdapter);
         recycleView.setNestedScrollingEnabled(false);
         if(Build.VERSION.SDK_INT>=23)

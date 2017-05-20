@@ -8,8 +8,8 @@
     android:id="@+id/list_item_layout"    >
     <ImageView
         android:id="@+id/list_item_icon"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:scaleType="centerCrop"
         />
     <TextView
@@ -17,8 +17,8 @@
         android:id="@+id/list_item_text"
         android:text=""
         android:gravity="center"
-        android:textSize="16dp"
-        android:textColor="@color/viewfinder_mask"
+        android:textSize="14dp"
+        style="@style/textColorAppText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
