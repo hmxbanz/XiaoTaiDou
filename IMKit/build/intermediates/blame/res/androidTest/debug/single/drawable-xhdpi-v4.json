@@ -284,12 +284,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_conversation_newmsg.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f61c.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f61c.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f603.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f603.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f61c.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f61c.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ad_list_file_icon.png",

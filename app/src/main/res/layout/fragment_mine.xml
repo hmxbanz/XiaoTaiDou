@@ -108,8 +108,9 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp" />
             <TextView
+                android:layout_below="@+id/img_home"
                 android:gravity="center"
-                android:textSize="16dp"
+                android:textSize="14dp"
                 android:layout_alignParentBottom="true"
                 android:text="收藏"
                 android:layout_width="match_parent"
@@ -131,8 +132,9 @@
             <TextView
                 android:gravity="center"
                 android:layout_alignParentBottom="true"
+                android:layout_below="@+id/img_msg"
                 android:text="记录"
-                android:textSize="16dp"
+                android:textSize="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
@@ -151,7 +153,7 @@
                 android:layout_height="25dp" />
             <TextView
                 android:layout_alignParentBottom="true"
-                android:textSize="16dp"
+                android:textSize="14dp"
                 android:gravity="center"
                 android:layout_below="@+id/img_friend"
                 android:text="动态"

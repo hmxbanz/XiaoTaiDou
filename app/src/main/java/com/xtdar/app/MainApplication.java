@@ -7,7 +7,7 @@ import com.xtdar.app.common.CommonTools;
 import cn.jpush.android.api.JPushInterface;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
-
+import com.unity3d.player.UnityPlayer;
 /**
  * Created by hmx on 2016/4/19.
  */

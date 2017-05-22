@@ -56,7 +56,7 @@
 
     <style name="AppTitleStyle">
         <item name="android:textColor">@color/appTextColor</item>
-        <item name="android:textSize">18dp</item>
+        <item name="android:textSize">14dp</item>
     </style>
 
     <style name="AppPlaintTextStyle">

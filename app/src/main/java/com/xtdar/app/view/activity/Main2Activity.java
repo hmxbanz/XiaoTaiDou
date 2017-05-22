@@ -164,6 +164,7 @@ public class Main2Activity extends BaseActivity implements View.OnClickListener{
                 mViewPager.setCurrentItem(1, false);
                 break;
             case R.id.tab_layout_logo:
+                startActivity(new Intent(this,UnityPlayerActivity.class));
                 break;
             case R.id.tab_layout_show:
                 mViewPager.setCurrentItem(2, false);
