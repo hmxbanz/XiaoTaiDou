@@ -156,12 +156,12 @@
         "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
-        "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\design_ic_visibility.png",
         "source": "C:\\Users\\PVer\\.android\\build-cache\\42f09f80b6143b679addaae842b8d981b0a915d3\\output\\res\\drawable-xhdpi-v4\\design_ic_visibility.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
+        "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png",

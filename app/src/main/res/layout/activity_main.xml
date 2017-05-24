@@ -17,7 +17,7 @@
         >
  </com.handmark.pulltorefresh.library.PullToRefreshWebView>
 
-    <com.xtdar.app.widget.ProgressBar.MaterialProgressBar
+    <com.xtdar.app.widget.progressBar.MaterialProgressBar
         android:id="@+id/progressBar"
         android:visibility="gone"
         android:layout_width="40dp"

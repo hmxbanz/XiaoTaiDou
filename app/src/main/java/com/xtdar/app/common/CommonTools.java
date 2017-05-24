@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.view.ViewConfiguration;
@@ -16,7 +18,6 @@ import java.util.Date;
 /**
  * Created by hmxbanz on 2017/2/17.
  */
-
 public class CommonTools {
     /**
      * 获取设备内容
@@ -124,5 +125,16 @@ public class CommonTools {
             return true;
         }
         return false;
+    }
+
+    /**
+     * 检测网络是否可用
+     *
+     * @return
+     */
+    public static boolean isNetworkConnected(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo ni = cm.getActiveNetworkInfo();
+        return ni != null && ni.isConnectedOrConnecting();
     }
 }

@@ -129,4 +129,6 @@ dependencies {
     compile 'com.github.florent37:viewanimator:1.0.3'
     compile 'com.android.support:design:25.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile project(':okhttputils')
+    compile 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.2.5'//滑动listview 删除
 }

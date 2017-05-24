@@ -17,7 +17,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.Toast;
 
-import com.xtdar.app.widget.ProgressBar.MaterialProgressBar;
+import com.xtdar.app.widget.progressBar.MaterialProgressBar;
 
 import com.xtdar.app.R;
 

@@ -13,8 +13,8 @@ import android.widget.TextView;
 public class BaseActivity extends AppCompatActivity {
     protected TextView mTextTitle;
     protected RelativeLayout layout_back;
-    protected SharedPreferences sp;
-    protected SharedPreferences.Editor editor;
+    public SharedPreferences sp;
+    public SharedPreferences.Editor editor;
 
 
     @Override

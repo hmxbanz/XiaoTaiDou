@@ -1,4 +1,4 @@
-package com.xtdar.app.widget.ProgressBar;
+package com.xtdar.app.widget.progressBar;
 
 import android.content.Context;
 import android.content.res.TypedArray;

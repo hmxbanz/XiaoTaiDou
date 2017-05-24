@@ -1,17 +1,10 @@
 package com.xtdar.app.view.fragment;
 
-import android.Manifest;
-import android.annotation.TargetApi;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,15 +15,15 @@ import android.widget.TextView;
 
 import com.xtdar.app.common.PhotoUtils;
 import com.xtdar.app.view.activity.AlbumActivity;
+import com.xtdar.app.view.activity.DeviceActivity;
 import com.xtdar.app.view.activity.DynamicActivity;
+import com.xtdar.app.view.activity.HistoryActivity;
 import com.xtdar.app.view.activity.MeActivity;
 import com.xtdar.app.view.activity.SettingActivity;
 import com.xtdar.app.view.activity.FavorActivity;
-import com.xtdar.app.view.activity.UpdateActivity;
 import com.xtdar.app.view.widget.BottomMenuDialog;
-import com.xtdar.app.view.widget.LoadDialog;
 import com.xtdar.app.view.widget.SelectableRoundedImageView;
-import com.xtdar.app.widget.ProgressBar.MaterialProgressBar;
+import com.xtdar.app.widget.progressBar.MaterialProgressBar;
 
 import com.xtdar.app.R;
 
@@ -43,9 +36,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private static final int COMPAREVERSION = 54;
     public static final String SHOWRED = "SHOWRED";
     public static MineFragment mFragment = null;
-    private RelativeLayout mLayoutFavor,mLayoutDynamic,mLayoutMsg,mLayoutHome;
-    private LinearLayout mLayoutUpdate,mLayoutFriendCondition,mLayoutVisitRecord,mLayoutVisitedByMe,mLayoutOrder,
-            mLayoutConfig,mlayoutCertification,mLayoutAblum;
+    private RelativeLayout mLayoutFavor,mLayoutDynamic,mLayoutHistory;
+    private LinearLayout mLayoutFriendCondition,mLayoutVisitRecord,mLayoutDevice,mLayoutAblum;
     private View mView;
 
     private SelectableRoundedImageView mImageView;
@@ -95,6 +87,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
 
         mLayoutFavor= (RelativeLayout) mView.findViewById(R.id.layout_favor);
         mLayoutFavor.setOnClickListener(this);
+        mLayoutHistory= (RelativeLayout) mView.findViewById(R.id.layout_history);
+        mLayoutHistory.setOnClickListener(this);
         mLayoutDynamic= (RelativeLayout) mView.findViewById(R.id.layout_dynamic);
         mLayoutDynamic.setOnClickListener(this);
         mLayoutVisitRecord= (LinearLayout) mView.findViewById(R.id.layout_visit_record);
@@ -102,6 +96,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
 
         mLayoutAblum= (LinearLayout) mView.findViewById(R.id.layout_album);
         mLayoutAblum.setOnClickListener(this);
+        mLayoutDevice= (LinearLayout) mView.findViewById(R.id.layout_device);
+        mLayoutDevice.setOnClickListener(this);
         mTxtMe = (TextView) mView.findViewById(R.id.txt_me);
         mTxtMe.setOnClickListener(this);
 
@@ -123,14 +119,20 @@ public class MineFragment extends Fragment implements View.OnClickListener {
             case R.id.txt_me:
                 startActivity(new Intent(getActivity(), MeActivity.class));
                 break;
-            case R.id.layout_dynamic:
-                startActivity(new Intent(getActivity(), DynamicActivity.class));
-                break;
             case R.id.layout_favor:
                 startActivity(new Intent(getActivity(), FavorActivity.class));
                 break;
+            case R.id.layout_history:
+                startActivity(new Intent(getActivity(), HistoryActivity.class));
+                break;
+            case R.id.layout_dynamic:
+                startActivity(new Intent(getActivity(), DynamicActivity.class));
+                break;
             case R.id.layout_album:
                 startActivity(new Intent(getActivity(), AlbumActivity.class));
+                break;
+            case R.id.layout_device:
+                startActivity(new Intent(getActivity(), DeviceActivity.class));
                 break;
         }
     }
