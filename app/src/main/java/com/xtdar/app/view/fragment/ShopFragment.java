@@ -43,6 +43,7 @@ public class ShopFragment extends Fragment  {
 
     private TabLayout mTabLayout;
     private TextView mTextSearch;
+    private TabLayout tabLayout;
 
     public static ShopFragment getInstance() {
         if (instance == null) {
@@ -92,12 +93,9 @@ public class ShopFragment extends Fragment  {
         //icon_search.setTint(getResources().getColor(R.color.wheat));
         mTextSearch.setCompoundDrawables(icon_search,null,null,null);
 //
-        TabLayout tabLayout= (TabLayout) view.findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("推荐"), true);//添加 Tab,默认选中
-        tabLayout.addTab(tabLayout.newTab().setText("男孩"),false);//添加 Tab,默认不选中
-        tabLayout.addTab(tabLayout.newTab().setText("女孩"),false);//添加 Tab,默认不选中
-        tabLayout.addTab(tabLayout.newTab().setText("0-3岁"),false);//添加 Tab,默认不选中
-        tabLayout.addTab(tabLayout.newTab().setText("3-6岁"),false);//添加 Tab,默认不选中
+        tabLayout= (TabLayout) view.findViewById(R.id.tabLayout);
+//        tabLayout.addTab(tabLayout.newTab().setText("推荐"), true);//添加 Tab,默认选中
+
         //tabLayout.setTabTextColors(R.color.appTextColor, R.color.red);//设置文本在选中和为选中时候的颜色
 
         //tabLayout.setupWithViewPager(mViewPager);
@@ -109,6 +107,10 @@ public class ShopFragment extends Fragment  {
 
         mFragments = new ArrayList<>();
         mFragments.add(ShopRecommendFragment.getInstance());
+        mFragments.add(ShopBoyFragment.getInstance());
+        mFragments.add(ShopGirlFragment.getInstance());
+        mFragments.add(Shop03Fragment.getInstance());
+        mFragments.add(Shop06Fragment.getInstance());
 
         mFragmentPagerAdapter = new FragmentPagerAdapter(getActivity().getSupportFragmentManager()) {
             @Override
@@ -125,6 +127,12 @@ public class ShopFragment extends Fragment  {
         mViewPager.setOffscreenPageLimit(MAXCACHEVIEWPAGES);
         //mViewPager.setOnPageChangeListener(new PageChangerListener());
         //initData();
+        tabLayout.setupWithViewPager(mViewPager);
+        tabLayout.getTabAt(0).setText("推荐");
+        tabLayout.getTabAt(1).setText("男孩");
+        tabLayout.getTabAt(2).setText("女孩");
+        tabLayout.getTabAt(3).setText("0-3岁");
+        tabLayout.getTabAt(4).setText("3-6岁");
     }
 
     @Override

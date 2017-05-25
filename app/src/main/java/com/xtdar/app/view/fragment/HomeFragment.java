@@ -38,6 +38,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener  {
     private TabLayout mTabLayout;
     private TextView mTextSearch;
     private RelativeLayout layoutHistory,layoutDownload;
+    private TabLayout tabLayout;
 
     public static HomeFragment getInstance() {
         if (instance == null) {
@@ -69,13 +70,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener  {
         //icon_search.setTint(getResources().getColor(R.color.wheat));
         mTextSearch.setCompoundDrawables(icon_search,null,null,null);
 //
-        TabLayout tabLayout= (TabLayout) view.findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("推荐"), true);//添加 Tab,默认选中
-        tabLayout.addTab(tabLayout.newTab().setText("动画"),false);//添加 Tab,默认不选中
-        tabLayout.addTab(tabLayout.newTab().setText("儿歌"),false);//添加 Tab,默认不选中
-        tabLayout.addTab(tabLayout.newTab().setText("故事"),false);//添加 Tab,默认不选中
-        tabLayout.addTab(tabLayout.newTab().setText("国学"),false);//添加 Tab,默认不选中
-        tabLayout.addTab(tabLayout.newTab().setText("科普"),false);//添加 Tab,默认不选中
+         tabLayout= (TabLayout) view.findViewById(R.id.tabLayout);
+
         //tabLayout.setTabTextColors(R.color.appTextColor, R.color.red);//设置文本在选中和为选中时候的颜色
 
         //tabLayout.setupWithViewPager(mViewPager);
@@ -87,6 +83,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener  {
 
         mFragments = new ArrayList<>();
         mFragments.add(HomeRecommendFragment.getInstance());
+        mFragments.add(HomeAnimationFragment.getInstance());
+        mFragments.add(HomeSongFragment.getInstance());
+        mFragments.add(HomeStoryFragment.getInstance());
+        mFragments.add(HomeCountryFragment.getInstance());
+        mFragments.add(HomeScienceFragment.getInstance());
 
         mFragmentPagerAdapter = new FragmentPagerAdapter(getActivity().getSupportFragmentManager()) {
             @Override
@@ -103,6 +104,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener  {
         mViewPager.setOffscreenPageLimit(MAXCACHEVIEWPAGES);
         //mViewPager.setOnPageChangeListener(new PageChangerListener());
         //initData();
+        tabLayout.setupWithViewPager(mViewPager);
+        tabLayout.getTabAt(0).setText("推荐");
+        tabLayout.getTabAt(1).setText("动画");
+        tabLayout.getTabAt(2).setText("儿歌");
+        tabLayout.getTabAt(3).setText("故事");
+        tabLayout.getTabAt(4).setText("国学");
+        tabLayout.getTabAt(5).setText("科普");
     }
 
     @Override
