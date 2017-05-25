@@ -5,21 +5,19 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.xtdar.app.Interface.IFavorView;
-import com.xtdar.app.adapter.FavorAdapter;
-import com.xtdar.app.model.UserList;
-import com.xtdar.app.server.async.OnDataListener;
-import com.xtdar.app.view.activity.FavorActivity;
-
 import com.xtdar.app.R;
+import com.xtdar.app.adapter.DownloadAdapter;
+import com.xtdar.app.adapter.FavorAdapter;
+import com.xtdar.app.server.async.OnDataListener;
+import com.xtdar.app.view.activity.DownloadActivity;
+import com.xtdar.app.view.activity.FavorActivity;
+import com.xtdar.app.view.fragment.DownloadMusicFragment;
+import com.xtdar.app.view.fragment.DownloadVideoFragment;
 import com.xtdar.app.view.fragment.FavorMusicFragment;
 import com.xtdar.app.view.fragment.FavorVideoFragment;
-import com.xtdar.app.view.fragment.HistoryMusicFragment;
-import com.xtdar.app.view.fragment.HistoryVideoFragment;
 
 import java.util.ArrayList;
 
@@ -27,25 +25,24 @@ import java.util.ArrayList;
  * Created by hmxbanz on 2017/4/5.
  */
 
-public class FavorPresenter extends BasePresenter implements OnDataListener {
+public class DownloadPresenter extends BasePresenter implements OnDataListener {
     Context mContext;
-    IFavorView mView;
-    FavorActivity mActivity;
+    DownloadActivity mActivity;
     ListView mListView;
-    private FavorAdapter mFavorAdapter;
+    private DownloadAdapter downloadAdapter;
     private ViewPager viewpager;
     private ArrayList<Fragment> mFragments;
     private FragmentPagerAdapter mFragmentPagerAdapter;
 
-    public FavorPresenter(Context context) {
+    public DownloadPresenter(Context context) {
         super(context);
-        this.mView=(IFavorView)context;
-        mActivity= (FavorActivity) context;
+        //this.mView=(IFavorView)context;
+        mActivity= (DownloadActivity) context;
 
     }
 
     public void init(){
-        mView.initData();
+        //mView.initData();
         //LoadDialog.show(mContext);
 
         TabLayout tabLayout= (TabLayout) mActivity.findViewById(R.id.tabLayout);
@@ -55,8 +52,8 @@ public class FavorPresenter extends BasePresenter implements OnDataListener {
         viewpager = (ViewPager) mActivity.findViewById(R.id.history_viewpager);
 
         mFragments = new ArrayList<>();
-        mFragments.add(FavorVideoFragment.getInstance());
-        mFragments.add(FavorMusicFragment.getInstance());
+        mFragments.add(DownloadVideoFragment.getInstance());
+        mFragments.add(DownloadMusicFragment.getInstance());
 
         mFragmentPagerAdapter = new FragmentPagerAdapter(mActivity.getSupportFragmentManager()) {
             @Override

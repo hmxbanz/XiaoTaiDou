@@ -17,16 +17,16 @@ import com.xtdar.app.model.UserList;
  * Created by AMing on 16/6/21.
  * Company RongCloud
  */
-public class HistoryMusicFragment extends Fragment {
-    public static HistoryMusicFragment instance = null;
+public class DownloadVideoFragment extends Fragment {
+    public static DownloadVideoFragment instance = null;
     private View view;
     private HistoryAdapter mHistoryAdapter;
     private ListView mListView;
 
 
-    public static HistoryMusicFragment getInstance() {
+    public static DownloadVideoFragment getInstance() {
         if (instance == null) {
-            instance = new HistoryMusicFragment();
+            instance = new DownloadVideoFragment();
         }
         return instance;
     }
@@ -34,7 +34,7 @@ public class HistoryMusicFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_history_music, null);
+        view = inflater.inflate(R.layout.fragment_history_video, null);
         initViews();
 
         return view;
@@ -46,11 +46,11 @@ public class HistoryMusicFragment extends Fragment {
         mHistoryAdapter.setOnItemButtonClick(new HistoryAdapter.OnItemButtonClick() {
             @Override
             public boolean onButtonClick(int position, View view, int status) {
-                Toast.makeText(getActivity(),"删除音频"+String.valueOf(position),Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(),"删除视频"+String.valueOf(position),Toast.LENGTH_LONG).show();
                 return false;
             }
         });
-        mListView= (ListView) view.findViewById(R.id.listview_history_music);
+        mListView= (ListView) view.findViewById(R.id.listview_history_video);
        mListView.setAdapter(mHistoryAdapter);
     }
 

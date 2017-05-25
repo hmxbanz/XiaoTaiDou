@@ -65,7 +65,7 @@ public class HistoryVideoFragment extends Fragment {
                 return false;
             }
         });
-        mListView= (ListView) view.findViewById(R.id.listview_history);
+        mListView= (ListView) view.findViewById(R.id.listview_history_video);
        mListView.setAdapter(mHistoryAdapter);
     }
 

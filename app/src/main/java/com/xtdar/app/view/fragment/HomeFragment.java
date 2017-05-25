@@ -11,12 +11,15 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.xtdar.app.R;
+import com.xtdar.app.view.activity.DownloadActivity;
+import com.xtdar.app.view.activity.HistoryActivity;
 import com.xtdar.app.view.activity.SearchActivity;
 
 /**
@@ -34,6 +37,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener  {
 
     private TabLayout mTabLayout;
     private TextView mTextSearch;
+    private RelativeLayout layoutHistory,layoutDownload;
 
     public static HomeFragment getInstance() {
         if (instance == null) {
@@ -53,6 +57,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener  {
     }
 
     private void initViews() {
+        layoutHistory=(RelativeLayout)view.findViewById(R.id.tag_layout_history);
+        layoutHistory.setOnClickListener(this);
+        layoutDownload=(RelativeLayout)view.findViewById(R.id.tag_layout_download);
+        layoutDownload.setOnClickListener(this);
         mTextSearch= (TextView) view.findViewById(R.id.txt_search);
         mTextSearch.setOnClickListener(this);
         Drawable icon_search=getActivity().getResources().getDrawable(R.drawable.icon_search);
@@ -107,6 +115,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener  {
         switch (v.getId()) {
             case R.id.txt_search:
                 getActivity().startActivity(new Intent(getContext(), SearchActivity.class));
+                break;
+            case R.id.tag_layout_history:
+                getActivity().startActivity(new Intent(getContext(), HistoryActivity.class));
+                break;
+            case R.id.tag_layout_download:
+                getActivity().startActivity(new Intent(getContext(), DownloadActivity.class));
                 break;
         }
     }

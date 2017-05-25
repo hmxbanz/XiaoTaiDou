@@ -6,24 +6,24 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xtdar.app.Interface.IFavorView;
-
 import com.xtdar.app.R;
-import com.xtdar.app.presenter.FavorPresenter;
+import com.xtdar.app.presenter.DownloadPresenter;
 
-public class FavorActivity extends BaseActivity implements IFavorView,View.OnClickListener {
-    private FavorPresenter favorPresenter;
+public class DownloadActivity extends BaseActivity implements View.OnClickListener {
+    private DownloadPresenter downloadPresenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favor);
+        setContentView(R.layout.activity_download);
         initViews();
-        favorPresenter=new FavorPresenter(this);
-        favorPresenter.init();
+        downloadPresenter =new DownloadPresenter(this);
+        downloadPresenter.init();
     }
     public void initViews(){
         layout_back= (RelativeLayout) findViewById(R.id.layout_back);
         layout_back.setOnClickListener(this);
         mTextTitle=(TextView) findViewById(R.id.text_title);
+        mTextTitle.setText("下载");
     }
     @Override
     public void onClick(View v) {
@@ -34,9 +34,5 @@ public class FavorActivity extends BaseActivity implements IFavorView,View.OnCli
         }
     }
 
-    @Override
-    public void initData() {
-        mTextTitle.setText("收藏");
-    }
 
 }

@@ -17,16 +17,16 @@ import com.xtdar.app.model.UserList;
  * Created by AMing on 16/6/21.
  * Company RongCloud
  */
-public class HistoryMusicFragment extends Fragment {
-    public static HistoryMusicFragment instance = null;
+public class DownloadMusicFragment extends Fragment {
+    public static DownloadMusicFragment instance = null;
     private View view;
     private HistoryAdapter mHistoryAdapter;
     private ListView mListView;
 
 
-    public static HistoryMusicFragment getInstance() {
+    public static DownloadMusicFragment getInstance() {
         if (instance == null) {
-            instance = new HistoryMusicFragment();
+            instance = new DownloadMusicFragment();
         }
         return instance;
     }

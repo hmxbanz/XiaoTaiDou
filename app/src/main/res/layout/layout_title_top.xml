@@ -62,26 +62,27 @@
                 android:id="@+id/text_title"
                 style="@style/AppTitleStyle"
                 android:gravity="center"
-                android:text=""
+                android:text="标题"
                 android:textSize="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
         </RelativeLayout>
         <RelativeLayout
+
             android:id="@+id/message"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="match_parent"
             >
 
             <TextView
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="5dp"
                 android:gravity="center"
                 android:id="@+id/text_right"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text=""
-                android:textSize="18dp" />
+                android:textSize="16dp" />
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

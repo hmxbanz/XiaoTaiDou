@@ -8,26 +8,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.xtdar.app.loader.GlideImageLoader;
-
 import com.xtdar.app.R;
-
+import com.xtdar.app.loader.GlideImageLoader;
 import com.xtdar.app.model.User;
-import com.xtdar.app.view.widget.SelectableRoundedImageView;
 
 /**
  * Created by Bob on 2015/3/26.
  */
 
-public class FavorAdapter extends BaseAdapter {
-    private FavorAdapter.ViewHoler holder;
+public class DownloadAdapter extends BaseAdapter {
+    private DownloadAdapter.ViewHoler holder;
     private GlideImageLoader glideImageLoader;
 
-    private FavorAdapter.OnItemButtonClick mOnItemButtonClick;
-    public FavorAdapter.OnItemButtonClick getOnItemButtonClick() {
+    private DownloadAdapter.OnItemButtonClick mOnItemButtonClick;
+    public DownloadAdapter.OnItemButtonClick getOnItemButtonClick() {
         return mOnItemButtonClick;
     }
-    public void setOnItemButtonClick(FavorAdapter.OnItemButtonClick onItemButtonClick) {
+    public void setOnItemButtonClick(DownloadAdapter.OnItemButtonClick onItemButtonClick) {
         this.mOnItemButtonClick = onItemButtonClick;
     }
 
@@ -37,21 +34,21 @@ public class FavorAdapter extends BaseAdapter {
 
     }
 
-    public FavorAdapter(Context context) {
+    public DownloadAdapter(Context context) {
         super(context);
     }
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            holder = new FavorAdapter.ViewHoler();
+            holder = new DownloadAdapter.ViewHoler();
             convertView = mInflater.inflate(R.layout.item_history, null);
             holder.mNickName = (TextView) convertView.findViewById(R.id.nick_name);
             holder.mAvator = (ImageView) convertView.findViewById(R.id.img_avator);
             holder.btnDelete = (Button) convertView.findViewById(R.id.btnDelete);
             convertView.setTag(holder);
         } else {
-            holder = (FavorAdapter.ViewHoler) convertView.getTag();
+            holder = (DownloadAdapter.ViewHoler) convertView.getTag();
         }
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override

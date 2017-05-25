@@ -56,7 +56,7 @@
 
             </RelativeLayout>
             <RelativeLayout
-                android:id="@+id/tag_layout_logo"
+                android:id="@+id/tag_layout_history"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
@@ -85,12 +85,12 @@
 
             </RelativeLayout>
             <RelativeLayout
-                android:id="@+id/message"
+                android:id="@+id/tag_layout_download"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:gravity="center"        >
-                <ImageView android:id="@+id/logoImg2"
+                <ImageView
                     android:src="@drawable/icon_download"
                     android:scaleType="centerInside"
                     android:layout_width="15dp"

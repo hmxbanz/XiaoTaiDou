@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.xtdar.app.common.PhotoUtils;
 import com.xtdar.app.view.activity.AlbumActivity;
 import com.xtdar.app.view.activity.DeviceActivity;
+import com.xtdar.app.view.activity.DownloadActivity;
 import com.xtdar.app.view.activity.DynamicActivity;
 import com.xtdar.app.view.activity.HistoryActivity;
 import com.xtdar.app.view.activity.MeActivity;
@@ -91,7 +92,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         mLayoutHistory.setOnClickListener(this);
         mLayoutDynamic= (RelativeLayout) mView.findViewById(R.id.layout_dynamic);
         mLayoutDynamic.setOnClickListener(this);
-        mLayoutVisitRecord= (LinearLayout) mView.findViewById(R.id.layout_visit_record);
+        mLayoutVisitRecord= (LinearLayout) mView.findViewById(R.id.layout_download);
         mLayoutVisitRecord.setOnClickListener(this);
 
         mLayoutAblum= (LinearLayout) mView.findViewById(R.id.layout_album);
@@ -134,6 +135,9 @@ public class MineFragment extends Fragment implements View.OnClickListener {
             case R.id.layout_device:
                 startActivity(new Intent(getActivity(), DeviceActivity.class));
                 break;
+            case R.id.layout_download:
+            startActivity(new Intent(getActivity(), DownloadActivity.class));
+            break;
         }
     }
 
