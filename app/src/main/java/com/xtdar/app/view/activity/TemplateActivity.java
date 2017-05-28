@@ -26,8 +26,8 @@ public class TemplateActivity extends BaseActivity implements View.OnClickListen
     private void initViews() {
         layout_back = (RelativeLayout) findViewById(R.id.layout_back);
         layout_back.setOnClickListener(this);
-        mTextTitle =(TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("搜索");
+        txtTitle =(TextView) findViewById(R.id.text_title);
+        txtTitle.setText("搜索");
 
 
     }

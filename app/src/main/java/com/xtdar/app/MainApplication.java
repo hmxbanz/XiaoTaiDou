@@ -8,6 +8,8 @@ import cn.jpush.android.api.JPushInterface;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
 import com.unity3d.player.UnityPlayer;
+import com.xtdar.app.common.NLog;
+
 /**
  * Created by hmx on 2016/4/19.
  */
@@ -24,6 +26,7 @@ public class MainApplication extends Application {
         //x.Ext.setDebug(BuildConfig.DEBUG);
 
 //        RongIM.init(this);//融云
+          NLog.setDebug(true);//开log日志
 //        String token="InrWpf704p8lSDS501hoQqUqI4Ur9skzl/M2DxXHGV5UMrXAr4mmC/3UPlxI7qzKnpJ0AvGEB3LFDHqaV6ZdGh3JXdyMvD0s";
 //        connect(token);
 

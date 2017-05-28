@@ -49,8 +49,8 @@ public class MeActivity extends BaseActivity implements View.OnClickListener {
         mLayoutModifyPass = (LinearLayout) findViewById(R.id.layout_modify_pass);
         mLayoutModifyPass.setOnClickListener(this);
 
-        mTextTitle =(TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("资料");
+        txtTitle =(TextView) findViewById(R.id.text_title);
+        txtTitle.setText("资料");
         selectableRoundedImageView = (SelectableRoundedImageView) findViewById(R.id.img_avator);
         selectableRoundedImageView.setOnClickListener(this);
     }

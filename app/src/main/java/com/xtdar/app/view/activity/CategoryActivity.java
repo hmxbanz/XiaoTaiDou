@@ -1,10 +1,8 @@
 package com.xtdar.app.view.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -36,8 +34,8 @@ public class CategoryActivity extends BaseActivity implements View.OnClickListen
         mTextBack =(TextView) findViewById(R.id.text_back);
         mTextBack.setText("");
 
-        mTextTitle =(TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("全部分类");
+        txtTitle =(TextView) findViewById(R.id.text_title);
+        txtTitle.setText("全部分类");
 
 
         //头部

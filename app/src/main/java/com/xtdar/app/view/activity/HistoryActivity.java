@@ -7,7 +7,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xtdar.app.R;
-import com.xtdar.app.presenter.DevicePresenter;
 import com.xtdar.app.presenter.HistoryPresenter;
 
 
@@ -27,8 +26,8 @@ public class HistoryActivity extends BaseActivity implements View.OnClickListene
         layout_back= (RelativeLayout) findViewById(R.id.layout_back);
         layout_back.setOnClickListener(this);
 
-        mTextTitle =(TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("记录");
+        txtTitle =(TextView) findViewById(R.id.text_title);
+        txtTitle.setText("记录");
 
 
     }

@@ -8,14 +8,14 @@ public class CommonResponse {
      * result : {"id":"t1hWCOGvX","token":"B0DA/kKanJviD5xxUzhwsEFIJad0/86YwGxBwz1417WFQi/Vr2OJay26s5IFDffGZaUYRMAkvN0ikvOcTl7RN9JilKZlosfQ"}
      */
 
-    private int state;
+    private int code;
     private String msg;
 
-    public int getState() {
-        return state;
+    public int getCode() {
+        return code;
     }
-    public void setState(int state) {
-        this.state = state;
+    public void setCode(int code) {
+        this.code = code;
     }
     public String getMsg() {
         return msg;

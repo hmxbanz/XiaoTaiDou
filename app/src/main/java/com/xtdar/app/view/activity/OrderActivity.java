@@ -23,7 +23,7 @@ public class OrderActivity extends BaseActivity implements IOrderView,View.OnCli
     public void initViews(){
         layout_back= (RelativeLayout) findViewById(R.id.layout_back);
         layout_back.setOnClickListener(this);
-        mTextTitle=(TextView)findViewById(R.id.text_title);
+        txtTitle =(TextView)findViewById(R.id.text_title);
     }
     @Override
     public void onClick(View v) {
@@ -36,6 +36,6 @@ public class OrderActivity extends BaseActivity implements IOrderView,View.OnCli
 
     @Override
     public void initData() {
-        mTextTitle.setText("消费记录");
+        txtTitle.setText("消费记录");
     }
 }

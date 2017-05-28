@@ -26,8 +26,8 @@ public class NewPasswordActivity extends BaseActivity implements View.OnClickLis
     public void initViews(){
         layout_back= (RelativeLayout) findViewById(R.id.layout_back);
         layout_back.setOnClickListener(this);
-        mTextTitle = (TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("更改密码");
+        txtTitle = (TextView) findViewById(R.id.text_title);
+        txtTitle.setText("更改密码");
         mPassword = (EditText) findViewById(R.id.password);
         mPasswordAgain = (EditText) findViewById(R.id.password_again);
         mBtnChangePassword = (Button) findViewById(R.id.btn_new_pass);

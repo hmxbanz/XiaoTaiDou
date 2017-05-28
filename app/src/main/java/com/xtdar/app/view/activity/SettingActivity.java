@@ -41,8 +41,8 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
         mLayoutLogoff= (LinearLayout) findViewById(R.id.layout_logoff);
         mLayoutLogoff.setOnClickListener(this);
 
-        mTextTitle =(TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("设置");
+        txtTitle =(TextView) findViewById(R.id.text_title);
+        txtTitle.setText("设置");
     }
     @Override
     public void onClick(View v) {

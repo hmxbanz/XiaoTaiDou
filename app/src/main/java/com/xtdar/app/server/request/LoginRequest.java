@@ -2,25 +2,27 @@ package com.xtdar.app.server.request;
 
 public class LoginRequest {
 
-    private String userName;
-    private String password;
+    private String phone_no;
+    private String pwd;
 
-    public LoginRequest(String region, String userName, String password) {
-        this.userName = userName;
-        this.password = password;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public LoginRequest(String userName, String password) {
+        this.phone_no = userName;
+        this.pwd = password;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPhone_no() {
+        return phone_no;
     }
-    public void setPassword(String password) {
-        this.password = password;
+
+    public void setPhone_no(String phone_no) {
+        this.phone_no = phone_no;
+    }
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 }

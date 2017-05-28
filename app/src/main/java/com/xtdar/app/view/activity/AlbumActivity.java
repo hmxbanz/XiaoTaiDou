@@ -1,6 +1,5 @@
 package com.xtdar.app.view.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -32,8 +31,8 @@ public class AlbumActivity extends BaseActivity implements IAlbumView,AlbumAdapt
         layout_back= (RelativeLayout) findViewById(R.id.layout_back);
         layout_back.setOnClickListener(this);
         TextView text_right=(TextView) findViewById(R.id.text_right);
-        mTextTitle =(TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("我的相册");
+        txtTitle =(TextView) findViewById(R.id.text_title);
+        txtTitle.setText("我的相册");
         text_right.setText("上传");
         text_right.setOnClickListener(this);
     }

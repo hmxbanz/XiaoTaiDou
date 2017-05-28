@@ -26,8 +26,8 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener 
 
         layout_back= (RelativeLayout) findViewById(R.id.layout_back);
         layout_back.setOnClickListener(this);
-        mTextTitle =(TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("关于");
+        txtTitle =(TextView) findViewById(R.id.text_title);
+        txtTitle.setText("关于");
     }
     @Override
     public void onClick(View v) {

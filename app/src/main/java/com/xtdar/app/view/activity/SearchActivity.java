@@ -1,16 +1,13 @@
 package com.xtdar.app.view.activity;
 
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xtdar.app.R;
-import com.xtdar.app.presenter.LoginPresenter;
 import com.xtdar.app.presenter.SearchPresenter;
 
 
@@ -39,8 +36,8 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
         mTextSearch.setCompoundDrawables(icon_search,null,null,null);
         layout_back = (RelativeLayout) findViewById(R.id.layout_back);
         layout_back.setOnClickListener(this);
-        mTextTitle =(TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("搜索");
+        txtTitle =(TextView) findViewById(R.id.text_title);
+        txtTitle.setText("搜索");
 
         Drawable drawable = this.getResources().getDrawable(R.drawable.icon_circle_arrow);
         drawable.setBounds(0,0,55,55);

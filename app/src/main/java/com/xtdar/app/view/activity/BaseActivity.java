@@ -11,7 +11,7 @@ import android.widget.TextView;
  * Created by hmx on 2016/5/21.
  */
 public class BaseActivity extends AppCompatActivity {
-    protected TextView mTextTitle;
+    protected TextView txtTitle;
     protected RelativeLayout layout_back;
     public SharedPreferences sp;
     public SharedPreferences.Editor editor;

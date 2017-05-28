@@ -29,8 +29,8 @@ public class ConversationListActivity extends BaseActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversation_list);
 
-        mTextTitle =(TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("消息");
+        txtTitle =(TextView) findViewById(R.id.text_title);
+        txtTitle.setText("消息");
 
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();

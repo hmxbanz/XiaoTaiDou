@@ -1,8 +1,6 @@
 package com.xtdar.app.view.activity;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,8 +36,8 @@ public class FeedbackActivity extends BaseActivity implements View.OnClickListen
         mBtnRport.setOnClickListener(this);
 
         mReportContent = (EditText) findViewById(R.id.report_content);
-        mTextTitle = (TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("用户反馈");
+        txtTitle = (TextView) findViewById(R.id.text_title);
+        txtTitle.setText("用户反馈");
     }
 
     @Override

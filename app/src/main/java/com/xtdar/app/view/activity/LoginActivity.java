@@ -1,12 +1,9 @@
 package com.xtdar.app.view.activity;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -31,14 +28,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
         initViews();
         mLoginPresenter = new LoginPresenter(this);
-        mLoginPresenter.init();
+        mLoginPresenter.init(mUsername,mPassword);
     }
 
     private void initViews() {
         layout_back = (RelativeLayout) findViewById(R.id.layout_back);
         layout_back.setOnClickListener(this);
-        mTextTitle =(TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("登录");
+        txtTitle =(TextView) findViewById(R.id.text_title);
+        txtTitle.setText("登录");
         mTextRight =(TextView) findViewById(R.id.text_right);
         mTextRight.setText("注册");
         mTextRight.setOnClickListener(this);
@@ -48,6 +45,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         mLayoutRegister = (RelativeLayout) findViewById(R.id.layout_register);
         mLayoutRegister.setOnClickListener(this);
         mTextForgetPassword.setOnClickListener(this);
+        mUsername = (EditText) findViewById(R.id.username);
+        mPassword = (EditText) findViewById(R.id.password);
         mBtnLogin = (Button) findViewById(R.id.btn_login);
         mBtnLogin.setOnClickListener(this);
     }
@@ -62,7 +61,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 startActivity(new Intent(this,RegisterActivity.class));
                 break;
             case R.id.btn_login:
-                startActivity(new Intent(this,Main2Activity.class));
+                mLoginPresenter.login();
         }
     }
 }

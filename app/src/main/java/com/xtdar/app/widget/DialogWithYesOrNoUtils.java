@@ -34,21 +34,23 @@ public class DialogWithYesOrNoUtils {
     private DialogWithYesOrNoUtils() {
     }
 
-    public void showDialog(Context context, String titleInfo, final DialogCallBack callBack) {
+    public void showDialog(Context context, String titleText,String confirmText ,final DialogCallBack callBack) {
         final AlertDialog alterDialog = new AlertDialog.Builder(context).create();
         alterDialog.show();
         Window window=alterDialog.getWindow();
         window.setContentView(R.layout.alert_dialog);
         TextView textTitle = (TextView) window.findViewById(R.id.text_title);
-        textTitle.setText(titleInfo);
+        textTitle.setText(titleText);
         TextView btnCancle = (TextView) window.findViewById(R.id.btn_cancle);
         btnCancle.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 alterDialog.dismiss();
+                callBack.onCancle();
             }
         });
         TextView btnConfirm = (TextView) window.findViewById(R.id.btn_confirm);
+        if(!TextUtils.isEmpty(confirmText))    btnConfirm.setText(confirmText);
         btnConfirm.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -59,7 +61,7 @@ public class DialogWithYesOrNoUtils {
         //另一种自定义alertDialog样式的方法(只定义中间部分布局，按键“确定”，“取消”还是系统的)
 //AlertDialog.Builder alterDialog = new AlertDialog.Builder(context);
 //        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.activity_config, null);
+//        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.activity_setting, null);
 //        alterDialog.setView(layout);
 //        alterDialog.setMessage(titleInfo);
 //        alterDialog.setCancelable(true);//
@@ -79,6 +81,7 @@ public class DialogWithYesOrNoUtils {
 
     public interface DialogCallBack {
         void executeEvent();
+        void onCancle();
     }
 
 

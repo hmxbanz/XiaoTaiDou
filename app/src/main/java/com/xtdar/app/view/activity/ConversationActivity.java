@@ -19,11 +19,11 @@ public class ConversationActivity extends BaseActivity implements View.OnClickLi
         setContentView(R.layout.activity_conversation);
         String stargetId = getIntent().getData().getQueryParameter("targetId");
         String sTitle = getIntent().getData().getQueryParameter("title");
-        mTextTitle =(TextView) findViewById(R.id.text_title);
+        txtTitle =(TextView) findViewById(R.id.text_title);
         if(!TextUtils.isEmpty(sTitle))
-            mTextTitle.setText(sTitle+"聊天中...");
+            txtTitle.setText(sTitle+"聊天中...");
         else
-            mTextTitle.setText("聊天中...");
+            txtTitle.setText("聊天中...");
 
     }
 

@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.xtdar.app.Interface.IFavorView;
 import com.xtdar.app.R;
 import com.xtdar.app.presenter.DownloadPresenter;
 
@@ -22,8 +21,8 @@ public class DownloadActivity extends BaseActivity implements View.OnClickListen
     public void initViews(){
         layout_back= (RelativeLayout) findViewById(R.id.layout_back);
         layout_back.setOnClickListener(this);
-        mTextTitle=(TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("下载");
+        txtTitle =(TextView) findViewById(R.id.text_title);
+        txtTitle.setText("下载");
     }
     @Override
     public void onClick(View v) {

@@ -7,18 +7,18 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.util.Log;
 
 import java.io.File;
 import java.util.List;
 
 
-
-
 /**
- * [从本地选择图片以及拍照工具类，完美适配2.0-5.0版本]
+ * [从本地选择图片以及拍照工具类，完美适配2.0-7.0版本]
  *
  * @author huxinwu
  * @version 1.0
@@ -26,7 +26,7 @@ import java.util.List;
  **/
 public class PhotoUtils {
 
-    private final String tag = PhotoUtils.class.getSimpleName();
+    private final String TAG = PhotoUtils.class.getSimpleName();
 
     /**
      * 裁剪图片成功后返回
@@ -42,40 +42,69 @@ public class PhotoUtils {
     public static final int INTENT_SELECT = 4;
 
     public static final String CROP_FILE_NAME = "crop_file.jpg";
+    private static final File PHOTO_DIR = new File(Environment.getExternalStorageDirectory() + "/CameraCache");
+    private final Uri outputUri;
+
 
     /**
      * PhotoUtils对象
      **/
     private OnPhotoResultListener onPhotoResultListener;
+    private File mCurrentPhotoFile;
 
 
     public PhotoUtils(OnPhotoResultListener onPhotoResultListener) {
         this.onPhotoResultListener = onPhotoResultListener;
+
+        //String fileName = System.currentTimeMillis() + ".jpg";
+        if (!PHOTO_DIR.exists()) {
+            PHOTO_DIR.mkdirs();// 创建照片的存储目录
+        }
+        mCurrentPhotoFile = new File(PHOTO_DIR, CROP_FILE_NAME);
+        outputUri = Uri.fromFile(new File(mCurrentPhotoFile.getPath()));
     }
 
+
     /**
-     * 拍照
+     * 拍照(7.0之后)
      *
      * @param
      * @return
      */
     public void takePicture(Activity activity) {
-        try {
-            //每次选择图片吧之前的图片删除
-            clearCropFile(buildUri(activity));
 
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        try {
+            Uri uri=buildUri(activity);
+
+            //每次选择图片吧之前的图片删除
+            clearCropFile(outputUri);
+
+            Intent intent = new Intent();
             intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, buildUri(activity));
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                Uri imageUri = FileProvider.getUriForFile(activity, "cn.nannvyou.app.provider", mCurrentPhotoFile);
+                intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                intent.setFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+
+            } else {
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mCurrentPhotoFile));
+            }
+
+
+
             if (!isIntentAvailable(activity, intent)) {
                 return;
             }
+
             activity.startActivityForResult(intent, INTENT_TAKE);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
     /***
      * 选择一张图片
      * 图片类型，这里是image/*，当然也可以设置限制
@@ -113,7 +142,12 @@ public class PhotoUtils {
      */
     private Uri buildUri(Activity activity) {
         if (CommonTools.checkSDCard()) {
-            return Uri.fromFile(Environment.getExternalStorageDirectory()).buildUpon().appendPath(CROP_FILE_NAME).build();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                return FileProvider.getUriForFile(activity, "cn.nannvyou.app.provider", mCurrentPhotoFile);
+            } else {
+                return Uri.fromFile(Environment.getExternalStorageDirectory()).buildUpon().appendPath(CROP_FILE_NAME).build();
+            }
+
         } else {
             return Uri.fromFile(activity.getCacheDir()).buildUpon().appendPath(CROP_FILE_NAME).build();
         }
@@ -130,8 +164,26 @@ public class PhotoUtils {
     }
 
     private boolean corp(Activity activity, Uri uri) {
+        String url = FileUtils.getPath(activity, uri);
         Intent cropIntent = new Intent("com.android.camera.action.CROP");
-        cropIntent.setDataAndType(uri, "image/*");
+
+        //sdk>=24
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+
+            Uri imageUri = FileProvider.getUriForFile(activity, "cn.nannvyou.app.provider", new File(url));//通过FileProvider创建一个content类型的Uri
+            cropIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            cropIntent.putExtra("noFaceDetection", true);//去除默认的人脸识别，否则和剪裁匡重叠
+            cropIntent.setDataAndType(imageUri, "image/*");
+
+            //19=<sdk<24
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+            cropIntent.setDataAndType(Uri.fromFile(new File(url)), "image/*");
+
+            //sdk<19
+        } else {
+            cropIntent.setDataAndType(uri, "image/*");
+        }
+
         cropIntent.putExtra("crop", "true");
         cropIntent.putExtra("aspectX", 1);
         cropIntent.putExtra("aspectY", 1);
@@ -139,8 +191,8 @@ public class PhotoUtils {
         cropIntent.putExtra("outputY", 200);
         cropIntent.putExtra("return-data", false);
         cropIntent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
-        Uri cropuri = buildUri(activity);
-        cropIntent.putExtra(MediaStore.EXTRA_OUTPUT, cropuri);
+
+        cropIntent.putExtra(MediaStore.EXTRA_OUTPUT, outputUri);
         if (!isIntentAvailable(activity, cropIntent)) {
             return false;
         } else {
@@ -148,6 +200,7 @@ public class PhotoUtils {
                 activity.startActivityForResult(cropIntent, INTENT_CROP);
                 return true;
             } catch (Exception e) {
+                Log.w("sssssssssss",e.getMessage());
                 e.printStackTrace();
                 return false;
             }
@@ -163,17 +216,17 @@ public class PhotoUtils {
      */
     public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
         if (onPhotoResultListener == null) {
-            Log.e(tag, "onPhotoResultListener is not null");
+            Log.e(TAG, "onPhotoResultListener is not null");
             return;
         }
 
         switch (requestCode) {
             //拍照
             case INTENT_TAKE:
-                if (new File(buildUri(activity).getPath()).exists()) {
-                    if (corp(activity, buildUri(activity))) {
+                    if (mCurrentPhotoFile.exists()) {
+                        if (corp(activity, Uri.fromFile(mCurrentPhotoFile))) {
                         return;
-                    }
+                        }
                     onPhotoResultListener.onPhotoCancel();
                 }
                 break;
@@ -191,7 +244,7 @@ public class PhotoUtils {
 
             //截图
             case INTENT_CROP:
-                if (resultCode == Activity.RESULT_OK && new File(buildUri(activity).getPath()).exists()) {
+                if (resultCode == Activity.RESULT_OK && mCurrentPhotoFile.exists()) {
                     onPhotoResultListener.onPhotoResult(buildUri(activity));
                 }
                 break;
@@ -213,13 +266,13 @@ public class PhotoUtils {
         if (file.exists()) {
             boolean result = file.delete();
             if (result) {
-                Log.i(tag, "Cached crop file cleared.");
+                Log.i(TAG, "Cached crop file cleared.");
             } else {
-                Log.e(tag, "Failed to clear cached crop file.");
+                Log.e(TAG, "Failed to clear cached crop file.");
             }
             return result;
         } else {
-            Log.w(tag, "Trying to clear cached crop file but it does not exist.");
+            Log.w(TAG, "Trying to clear cached crop file but it does not exist.");
         }
 
         return false;

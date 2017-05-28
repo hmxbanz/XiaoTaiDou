@@ -62,8 +62,8 @@ public class ContactsActivity extends BaseActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacts);
 
-        mTextTitle =(TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("好友列表");
+        txtTitle =(TextView) findViewById(R.id.text_title);
+        txtTitle.setText("好友列表");
 
         initView();
         initData();

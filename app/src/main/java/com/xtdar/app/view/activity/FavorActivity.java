@@ -23,7 +23,7 @@ public class FavorActivity extends BaseActivity implements IFavorView,View.OnCli
     public void initViews(){
         layout_back= (RelativeLayout) findViewById(R.id.layout_back);
         layout_back.setOnClickListener(this);
-        mTextTitle=(TextView) findViewById(R.id.text_title);
+        txtTitle =(TextView) findViewById(R.id.text_title);
     }
     @Override
     public void onClick(View v) {
@@ -36,7 +36,7 @@ public class FavorActivity extends BaseActivity implements IFavorView,View.OnCli
 
     @Override
     public void initData() {
-        mTextTitle.setText("收藏");
+        txtTitle.setText("收藏");
     }
 
 }

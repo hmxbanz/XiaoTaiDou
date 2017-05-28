@@ -26,8 +26,8 @@ public class ModifyPassActivity extends BaseActivity implements View.OnClickList
     public void initViews(){
         layout_back= (RelativeLayout) findViewById(R.id.layout_back);
         layout_back.setOnClickListener(this);
-        mTextTitle=(TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("设置密码");
+        txtTitle =(TextView) findViewById(R.id.text_title);
+        txtTitle.setText("设置密码");
 
         mOldPassword = (EditText) findViewById(R.id.old_pass);
         mPassword = (EditText) findViewById(R.id.password);

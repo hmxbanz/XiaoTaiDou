@@ -30,8 +30,8 @@ public class UpdateActivity extends BaseActivity implements View.OnClickListener
         text_right = (TextView) findViewById(R.id.text_right);
         text_right.setText("保存");
         text_right.setOnClickListener(this);
-        mTextTitle = (TextView) findViewById(R.id.text_title);
-        mTextTitle.setText("修改资料");
+        txtTitle = (TextView) findViewById(R.id.text_title);
+        txtTitle.setText("修改资料");
     }
 
 
