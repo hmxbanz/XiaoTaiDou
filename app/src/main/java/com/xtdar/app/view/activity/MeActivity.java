@@ -32,6 +32,8 @@ public class MeActivity extends BaseActivity implements View.OnClickListener {
     public static final int REQUEST_CODE_ASK_PERMISSIONS = 101;
     private Uri selectUri;
     private SelectableRoundedImageView selectableRoundedImageView;
+    private TextView nickName;
+    private TextView txtFindPwd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,7 @@ public class MeActivity extends BaseActivity implements View.OnClickListener {
         setContentView(R.layout.activity_me);
         initViews();
         mMePresenter =new MePresenter(this);
-        mMePresenter.init();
+        mMePresenter.init(selectableRoundedImageView,nickName);
         setPortraitChangeListener();
     }
     public void initViews(){
@@ -53,6 +55,10 @@ public class MeActivity extends BaseActivity implements View.OnClickListener {
         txtTitle.setText("资料");
         selectableRoundedImageView = (SelectableRoundedImageView) findViewById(R.id.img_avator);
         selectableRoundedImageView.setOnClickListener(this);
+        nickName = (TextView) findViewById(R.id.nick_name);
+        nickName.setOnClickListener(this);
+        txtFindPwd = (TextView) findViewById(R.id.txt_find_pwd);
+        txtFindPwd.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -60,12 +66,13 @@ public class MeActivity extends BaseActivity implements View.OnClickListener {
             case R.id.layout_back:
                 finish();
                 break;
+            case R.id.txt_find_pwd:
+                startActivity(new Intent(this,ForgetPasswordActivity.class));
+                break;
             case R.id.img_avator:
                 showPhotoDialog();
                 break;
-            case R.id.layout_modify_pass:
-                startActivity(new Intent(this,ForgetPasswordActivity.class));
-                break;
+
 
 
         }

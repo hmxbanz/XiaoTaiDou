@@ -59,7 +59,7 @@ public class DialogWithYesOrNoUtils {
             }
         });
         //另一种自定义alertDialog样式的方法(只定义中间部分布局，按键“确定”，“取消”还是系统的)
-//AlertDialog.Builder alterDialog = new AlertDialog.Builder(context);
+//AlertDialogCallback.Builder alterDialog = new AlertDialogCallback.Builder(context);
 //        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 //        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.activity_setting, null);
 //        alterDialog.setView(layout);

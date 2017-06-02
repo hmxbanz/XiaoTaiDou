@@ -184,7 +184,6 @@
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity android:name=".view.activity.FeedbackActivity" />
         <activity android:name=".view.activity.FavorActivity" />
-        <activity android:name=".view.activity.OrderActivity" />
         <activity android:name=".view.activity.SettingActivity" />
         <activity android:name=".view.activity.ModifyPassActivity" />
         <activity android:name=".view.activity.AlbumActivity" />

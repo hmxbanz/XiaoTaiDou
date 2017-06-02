@@ -22,6 +22,7 @@ import com.xtdar.app.widget.ACache;
 public class BasePresenter implements OnDataListener {
     protected final SharedPreferences sp;
     protected final SharedPreferences.Editor editor;
+    public boolean isLogin;
     protected Context mContext;
     public UserAction mUserAction;
     public AsyncTaskManager atm ;
@@ -36,9 +37,11 @@ public class BasePresenter implements OnDataListener {
         sp = ((BaseActivity)mContext).sp;
         editor=sp.edit();
         mUserInfoId= sp.getString(XtdConst.USERINFOID,"0");
+        isLogin = sp.getBoolean(XtdConst.ISLOGIN, false);
+        mUserAction.token=GetToken();
     }
     protected String GetToken(){
-        return sp.getString("access_token","");
+        return sp.getString(XtdConst.ACCESS_TOKEN,"");
     }
 
     @Override

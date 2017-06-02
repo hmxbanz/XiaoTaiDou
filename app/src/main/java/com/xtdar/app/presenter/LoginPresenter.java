@@ -64,27 +64,28 @@ public class LoginPresenter extends BasePresenter{
     }
     @Override
     public void onSuccess(int requestCode, Object result) {
+        LoadDialog.dismiss(mContext);
         if (result != null) {
             switch (requestCode) {
                 case LOGIN:
                     LoginResponse loginResponse = (LoginResponse) result;
-                    if (loginResponse.getState() == XtdConst.SUCCESS) {
-                        LoginResponse.ResultEntity entity=loginResponse.getUserInfo();
-                        editor.putString(XtdConst.ACCESS_TOKEN, entity.getRongCloudToken());
+                    if (loginResponse.getCode() == XtdConst.SUCCESS) {
+                        LoginResponse.ResultEntity entity=loginResponse.getData();
+                        editor.putString(XtdConst.ACCESS_TOKEN, entity.getAccess_key());
                         editor.putString(XtdConst.LOGIN_USERNAME, mUsername.getText().toString());
                         editor.putString(XtdConst.LOGING_PASSWORD, mPassword.getText().toString());
-                        editor.putString(XtdConst.USERID, entity.getUserID());
-                        editor.putString(XtdConst.USERINFOID, entity.getUserInfoID());
+
                         editor.putBoolean(XtdConst.ISLOGIN, true);
-                        editor.putString("iconSmall", entity.getIconSmall());
-                        editor.putString("checkName", entity.getCheckName());
+//                        editor.putString(XtdConst.USERID, entity.getUserID());
+//                        editor.putString(XtdConst.USERINFOID, entity.getUserInfoID());
+//                        editor.putString("iconSmall", entity.getIconSmall());
+//                        editor.putString("checkName", entity.getCheckName());
                         editor.apply();
 
                         mContext.startActivity(new Intent(mContext,Main2Activity.class));
-                    } else if (loginResponse.getState() == XtdConst.FAILURE) {
+                    } else if (loginResponse.getCode() == XtdConst.FAILURE) {
 
                     }
-                    LoadDialog.dismiss(mContext);
                     NToast.shortToast(mContext, loginResponse.getMsg());
                     break;
 

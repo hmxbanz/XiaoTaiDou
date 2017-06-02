@@ -62,6 +62,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 break;
             case R.id.btn_login:
                 mLoginPresenter.login();
+                break;
+            case R.id.text_forget_password:
+                startActivity(new Intent(this,ForgetPasswordActivity.class));
         }
     }
 }

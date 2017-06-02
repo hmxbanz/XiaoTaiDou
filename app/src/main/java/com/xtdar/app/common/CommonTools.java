@@ -4,6 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -15,9 +16,6 @@ import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * Created by hmxbanz on 2017/2/17.
- */
 public class CommonTools {
     /**
      * 获取设备内容
@@ -62,11 +60,17 @@ public class CommonTools {
     }
     //时间格式化
     public static String formatDateTime(long time) {
-        SimpleDateFormat mDateFormat = new SimpleDateFormat("MM-dd HH:mm");
+        SimpleDateFormat mDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         if (0 == time) {
             return "";
         }
         return mDateFormat.format(new Date(time));
+    }
+    //时间格式化/Date(3432433434)/
+    public static String formatDateTime2(String time) {
+        String s=time.substring(6,time.indexOf(")"));
+        long date=Long.parseLong(s);
+        return formatDateTime(date);
     }
     //检测包名的应用是否已经安装在手机
     public static boolean checkBrowser(Context context,String packageName) {
@@ -136,5 +140,26 @@ public class CommonTools {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo ni = cm.getActiveNetworkInfo();
         return ni != null && ni.isConnectedOrConnecting();
+    }
+    /**
+     * 获得当前的版本信息
+     *
+     * @return
+     */
+    public static String[] getVersionInfo(Context context) {
+        String[] version = new String[2];
+
+        PackageManager packageManager = context.getPackageManager();
+
+        try {
+            PackageInfo packageInfo = packageManager.getPackageInfo(context.getPackageName(), 0);
+            version[0] = String.valueOf(packageInfo.versionCode);
+            version[1] = packageInfo.versionName;
+            return version;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return version;
     }
 }

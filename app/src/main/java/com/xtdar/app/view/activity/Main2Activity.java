@@ -17,6 +17,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xtdar.app.R;
+import com.xtdar.app.presenter.Main2Presenter;
 import com.xtdar.app.view.fragment.HomeFragment;
 import com.xtdar.app.view.fragment.MineFragment;
 import com.xtdar.app.view.fragment.ShopFragment;
@@ -36,6 +37,7 @@ public class Main2Activity extends BaseActivity implements View.OnClickListener{
     private DragPointView mUnreadNumView;
 
     private View viewMainTop;
+    private Main2Presenter main2Presenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // 设置一个exit transition
@@ -50,6 +52,8 @@ public class Main2Activity extends BaseActivity implements View.OnClickListener{
         initMianViewPager();
         changeTextViewColor();
         changeSelectedTabState(0);
+        main2Presenter = new Main2Presenter(this);
+        main2Presenter.init();
     }
     private void initViews() {
         RelativeLayout homeLayout,shopLayout, arLayout, discoveryLayout,meLayout;

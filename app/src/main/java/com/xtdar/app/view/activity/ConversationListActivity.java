@@ -92,8 +92,7 @@ public class ConversationListActivity extends BaseActivity implements View.OnCli
             case R.id.layout_register:
                 startActivity(new Intent(this,RegisterActivity.class));
                 break;
-            case R.id.text_forget_password:
-                startActivity(new Intent(this,ForgetPasswordActivity.class));
+
         }
     }
 }

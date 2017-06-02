@@ -60,5 +60,9 @@
     <string name="password_cannot_contain_spaces">密码不能包含空格</string>
     <string name="captcha_cannot_be_null">验证码不能为空</string>
     <string name="protocol_not_checked">请同意用户协议</string>
+    <string name="login_api_fail">登录请求接口失败</string>
     <string name="password_not_equal">两次密码输入不相同</string>
+    <string name="download_success">下载完成</string>
+    <string name="download_progress">正在下载:%1$d%%</string>
+    <string name="no_record">暂无</string>
 </resources>

@@ -2,7 +2,6 @@ package com.xtdar.app.presenter;
 
 import android.content.Context;
 
-import com.xtdar.app.view.activity.ForgetPasswordActivity;
 import com.xtdar.app.view.activity.SearchActivity;
 
 /**

@@ -11,6 +11,8 @@ import com.xtdar.app.server.request.LoginRequest;
 import com.xtdar.app.server.response.CaptchaResponse;
 import com.xtdar.app.server.response.CommonResponse;
 import com.xtdar.app.server.response.LoginResponse;
+import com.xtdar.app.server.response.UserInfoResponse;
+import com.xtdar.app.server.response.VersionResponse;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -34,6 +36,7 @@ public class UserAction extends BaseAction {
     private final String CONTENT_TYPE = "application/json";
     private final String ENCODING = "utf-8";
     private String result;
+    public String token;
     public static UserAction instance;
 
     /**
@@ -55,15 +58,7 @@ public class UserAction extends BaseAction {
         return instance;
     }
 
-    /**
-     * 登录: 登录成功后，会设置 Cookie，后续接口调用需要登录的权限都依赖于 Cookie。
-     *
-     * @param region   国家码
-     * @param userName    手机号
-     * @param password 密码
-     * @throws HttpException
-     */
-
+//登录
     public LoginResponse login(String userName, String password) throws HttpException
     {
         String uri = getURL("kp_dyz/cli-comm-login.php");
@@ -82,7 +77,7 @@ public class UserAction extends BaseAction {
         }
         LoginResponse loginResponse = null;
         if (!TextUtils.isEmpty(result)) {
-            NLog.e("LoginResponse", result);
+            NLog.e("login", result);
 
             try {
                 loginResponse = JsonMananger.jsonToBean(result, LoginResponse.class);
@@ -95,7 +90,7 @@ public class UserAction extends BaseAction {
 
     }
 
-    //获取验证码
+//获取验证码
     public CaptchaResponse getCaptcha(String cellPhone) throws HttpException
     {
         String uri = getURL("kp_dyz/cli-comm-sendregmsg.php");
@@ -127,29 +122,90 @@ public class UserAction extends BaseAction {
         return captchaResponse;
 
     }
-
-    //获取验证码
-    public CommonResponse register(String cellPhone, String password, String captcha) throws HttpException
+//获取验证码(取回密码)
+    public CommonResponse getCaptchaForget(String cellPhone) throws HttpException
     {
-        String uri = getURL("kp_dyz/cli-comm-register.php");
+        String uri = getURL("kp_dyz/cli-comm-sendpwdmsg.php");
         Response response=null;
         try {
             response=OkHttpUtils
                     .get()
-                    .addParams("nick_name",cellPhone)
-                    .addParams("pwd",password)
-                    .addParams("rand_code",captcha)
+                    .addParams("phone_no",cellPhone)
                     .url(uri)
                     .build()
                     .execute();
             result =response.body().string();
-            Log.w(TAG, "接收的："+ result);
         } catch (IOException e) {
             e.printStackTrace();
         }
         CommonResponse commonResponse = null;
         if (!TextUtils.isEmpty(result)) {
-            NLog.e("CommonResponse", result);
+            NLog.e("getCaptchaForget", result);
+
+
+            try {
+                commonResponse = JsonMananger.jsonToBean(result, CommonResponse.class);
+            } catch (JSONException e) {
+                NLog.d(TAG, "getCaptchaForget occurs JSONException e=" + e.toString());
+                return null;
+            }
+        }
+        return commonResponse;
+
+    }
+//注册
+public CommonResponse register(String cellPhone, String password, String captcha) throws HttpException
+{
+    String uri = getURL("kp_dyz/cli-comm-resetPassword.php");
+    Response response=null;
+    try {
+        response=OkHttpUtils
+                .get()
+                .addParams("nick_name",cellPhone)
+                .addParams("pwd",password)
+                .addParams("rand_code",captcha)
+                .url(uri)
+                .build()
+                .execute();
+        result =response.body().string();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    CommonResponse commonResponse = null;
+    if (!TextUtils.isEmpty(result)) {
+        NLog.e("resetPassword", result);
+
+        try {
+            commonResponse = JsonMananger.jsonToBean(result, CommonResponse.class);
+        } catch (JSONException e) {
+            NLog.d(TAG, "CommonResponse occurs JSONException e=" + e.toString());
+            return null;
+        }
+    }
+    return commonResponse;
+
+}
+//重置密码
+    public CommonResponse resetPassword(String cellPhone, String password, String captcha) throws HttpException
+    {
+        String uri = getURL("kp_dyz/cli-comm-setpwd.php");
+        Response response=null;
+        try {
+            response=OkHttpUtils
+                    .get()
+                    .addParams("nick_name",cellPhone)
+                    .addParams("new_pwd",password)
+                    .addParams("rand_code",captcha)
+                    .url(uri)
+                    .build()
+                    .execute();
+            result =response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        CommonResponse commonResponse = null;
+        if (!TextUtils.isEmpty(result)) {
+            NLog.e("resetPassword", result);
 
             try {
                 commonResponse = JsonMananger.jsonToBean(result, CommonResponse.class);
@@ -161,64 +217,61 @@ public class UserAction extends BaseAction {
         return commonResponse;
 
     }
+//取个人资料
+    public UserInfoResponse getInfo() throws HttpException {
+        String uri = getURL("kp_dyz/cli-api-userinfo.php");
+        Response response=null;
+        try {
+            response=OkHttpUtils
+                    .get()
+                    .addParams("access_key",token)
+                    .url(uri)
+                    .build()
+                    .execute();
+            result =response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        UserInfoResponse userInfoResponse = null;
+        if (!TextUtils.isEmpty(result)) {
+            NLog.e("getInfo", result);
 
-//    //获取验证码
-//    public CaptchaResponse getCaptcha(String cellPhone) throws HttpException
-//    {
-//        String uri = getURL("Home/GetCaptcha");
-//        Response response=null;
-//        try {
-//            response=OkHttpUtils
-//                    .get()
-//                    .addParams("cellPhone",cellPhone)
-//                    .url(uri)
-//                    .build()
-//                    .execute();
-//            result =response.body().string();
-//            Log.w(TAG, "接收的："+ result);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        CaptchaResponse captchaResponse = null;
-//        if (!TextUtils.isEmpty(result)) {
-//            NLog.e("CaptchaResponse", result);
-//
-//
-//            try {
-//                captchaResponse = JsonMananger.jsonToBean(result, CaptchaResponse.class);
-//            } catch (JSONException e) {
-//                NLog.d(TAG, "Get Captcha occurs JSONException e=" + e.toString());
-//                return null;
-//            }
-//        }
-//        return captchaResponse;
-//
-//    }
-//    public CommonResponse newPassword(String userName, String password,String captcha) throws HttpException {
-//        String uri = getURL("Home/FindPassword");
-//        String json = JsonMananger.beanToJson(new NewPasswordRequest(userName, password,captcha));
-//        Log.w(TAG, "请求的："+json);
-//        Response response=null;
-//        try {
-//            response=OkHttpUtils
-//                    .postString()
-//                    .url(uri)
-//                    .mediaType(MediaType.parse("application/json; charset=utf-8"))
-//                    .content(json)//.content(new Gson().toJson(new User("zhy", "123")))
-//                    .build()
-//                    .execute();
-//            result =response.body().string();
-//            Log.w(TAG, "接收的："+ result);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//
-//        }
-//        CommonResponse commonResponse = null;
-//        if (!TextUtils.isEmpty(result)) {
-//            NLog.e("RegisterResponse", result);
-//            commonResponse = JsonMananger.jsonToBean(result, CommonResponse.class);
-//        }
-//        return commonResponse;
-//    }
+            try {
+                userInfoResponse = JsonMananger.jsonToBean(result, UserInfoResponse.class);
+            } catch (JSONException e) {
+                NLog.d(TAG, "UserInfoResponse occurs JSONException e=" + e.toString());
+                return null;
+            }
+        }
+        return userInfoResponse;
+    }
 
+//版本检查
+    public VersionResponse checkVersion() throws HttpException {
+        String uri = getURL("version.txt");
+        Response response=null;
+        try {
+            response=OkHttpUtils
+                    .get()
+                    .url(uri)
+                    .build()
+                    .execute();
+            result =response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        VersionResponse versionResponse = null;
+        if (!TextUtils.isEmpty(result)) {
+            NLog.e("checkVersion", result);
+
+
+            try {
+                versionResponse = JsonMananger.jsonToBean(result, VersionResponse.class);
+            } catch (JSONException e) {
+                NLog.d(TAG, "Get VersionResponse occurs JSONException e=" + e.toString());
+                return null;
+            }
+        }
+        return versionResponse;
+    }
 }

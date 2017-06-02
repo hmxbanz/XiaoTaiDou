@@ -21,9 +21,6 @@ import com.xtdar.app.view.activity.RegisterActivity;
 import com.xtdar.app.view.widget.LoadDialog;
 import com.xtdar.app.widget.DialogWithYesOrNoUtils;
 
-/**
- * Created by hmxbanz on 2017/4/5.
- */
 
 public class RegisterPresenter extends BasePresenter {
     private static final int GETCAPTCHA = 1;

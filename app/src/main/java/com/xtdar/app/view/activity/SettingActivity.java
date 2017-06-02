@@ -54,7 +54,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                 startActivity(new Intent(this,AboutActivity.class));
                 break;
             case R.id.layout_clear:
-                DialogWithYesOrNoUtils.getInstance().showDialog(this, "确定要清除缓存吗?", new DialogWithYesOrNoUtils.DialogCallBack() {
+                DialogWithYesOrNoUtils.getInstance().showDialog(this, "确定要清除缓存吗?",null, new DialogWithYesOrNoUtils.DialogCallBack() {
                     @Override
                     public void executeEvent() {
                         File file = new File(Environment.getExternalStorageDirectory().getPath() + getPackageName());
@@ -62,10 +62,14 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                         NToast.shortToast(SettingActivity.this, "消除成功");
                     }
 
+                    @Override
+                    public void onCancle() {
+
+                    }
                 });
                 break;
             case R.id.layout_logoff:
-                DialogWithYesOrNoUtils.getInstance().showDialog(this, "确定要退出小泰斗吗?", new DialogWithYesOrNoUtils.DialogCallBack() {
+                DialogWithYesOrNoUtils.getInstance().showDialog(this, "确定要退出小泰斗吗?",null, new DialogWithYesOrNoUtils.DialogCallBack() {
                     @Override
                     public void executeEvent() {
                         File file = new File(Environment.getExternalStorageDirectory().getPath() + getPackageName());
@@ -73,6 +77,10 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                         NToast.shortToast(SettingActivity.this, "退出成功");
                     }
 
+                    @Override
+                    public void onCancle() {
+
+                    }
                 });
                 break;
             case R.id.layout_feedback:

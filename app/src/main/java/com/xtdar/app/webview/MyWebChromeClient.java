@@ -59,7 +59,7 @@ public class MyWebChromeClient extends WebChromeClient {
 
     @Override
     public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
-    //handle Alert event, here we are showing AlertDialog
+    //handle Alert event, here we are showing AlertDialogCallback
         new AlertDialog.Builder(context)
                 .setTitle("男女友提示您：")
                 .setMessage(message)
@@ -108,7 +108,7 @@ public class MyWebChromeClient extends WebChromeClient {
         });
         // 禁止响应按back键的事件
         // builder.setCancelable(false);
-        // AlertDialog dialog = builder.create();
+        // AlertDialogCallback dialog = builder.create();
         //dialog.show();
         return true;
         // return super.onJsConfirm(view, url, message, result);
@@ -120,7 +120,7 @@ public class MyWebChromeClient extends WebChromeClient {
      */
 //    public boolean onJsPrompt(WebView view, String url, String message,
 //                              String defaultValue, final JsPromptResult result) {
-//        final AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+//        final AlertDialogCallback.Builder builder = new AlertDialogCallback.Builder(view.getContext());
 //
 //        builder.setNickName("对话框").setMessage(message);
 //

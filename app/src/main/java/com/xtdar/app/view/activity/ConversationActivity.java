@@ -33,8 +33,7 @@ public class ConversationActivity extends BaseActivity implements View.OnClickLi
             case R.id.layout_register:
                 startActivity(new Intent(this,RegisterActivity.class));
                 break;
-            case R.id.text_forget_password:
-                startActivity(new Intent(this,ForgetPasswordActivity.class));
+
         }
     }
 }
