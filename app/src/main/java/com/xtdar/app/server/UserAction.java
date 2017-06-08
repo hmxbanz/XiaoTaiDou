@@ -8,9 +8,12 @@ import com.alibaba.fastjson.JSONException;
 import com.xtdar.app.common.NLog;
 import com.xtdar.app.common.json.JsonMananger;
 import com.xtdar.app.server.request.LoginRequest;
+import com.xtdar.app.server.response.AdResponse;
 import com.xtdar.app.server.response.CaptchaResponse;
 import com.xtdar.app.server.response.CommonResponse;
 import com.xtdar.app.server.response.LoginResponse;
+import com.xtdar.app.server.response.RecommendResponse;
+import com.xtdar.app.server.response.TagResponse;
 import com.xtdar.app.server.response.UserInfoResponse;
 import com.xtdar.app.server.response.VersionResponse;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -273,5 +276,90 @@ public CommonResponse register(String cellPhone, String password, String captcha
             }
         }
         return versionResponse;
+    }
+
+    public TagResponse getTags() throws HttpException {
+        String uri = getURL("kp_dyz/cli-comm-classtag.php");
+        Response response=null;
+        try {
+            response=OkHttpUtils
+                    .get()
+                    .url(uri)
+                    .build()
+                    .execute();
+            result =response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        TagResponse tagResponse = null;
+        if (!TextUtils.isEmpty(result)) {
+            NLog.e("getTags", result);
+
+            try {
+                tagResponse = JsonMananger.jsonToBean(result, TagResponse.class);
+            } catch (JSONException e) {
+                NLog.d(TAG, "TagResponse occurs JSONException e=" + e.toString());
+                return null;
+            }
+        }
+        return tagResponse;
+
+    }
+
+    public AdResponse getAds() throws HttpException{
+        String uri = getURL("kp_dyz/cli-comm-classslideimg.php");
+        Response response=null;
+        try {
+            response=OkHttpUtils
+                    .get()
+                    .addParams("class_id","5")
+                    .url(uri)
+                    .build()
+                    .execute();
+            result =response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        AdResponse adResponse = null;
+        if (!TextUtils.isEmpty(result)) {
+            NLog.e("getAds", result);
+
+            try {
+                adResponse = JsonMananger.jsonToBean(result, AdResponse.class);
+            } catch (JSONException e) {
+                NLog.d(TAG, "AdResponse occurs JSONException e=" + e.toString());
+                return null;
+            }
+        }
+        return adResponse;
+
+    }
+//获取推荐
+    public RecommendResponse getRecommends()throws HttpException {
+        String uri = getURL("kp_dyz/cli-comm-recommend.php");
+        //String uri = "http://test.nannvyou.cn/a.txt";
+        Response response=null;
+        try {
+            response=OkHttpUtils
+                    .get()
+                    .url(uri)
+                    .build()
+                    .execute();
+            result =response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        RecommendResponse recommendResponse = null;
+        if (!TextUtils.isEmpty(result)) {
+            NLog.e("getRecommends", result);
+
+            try {
+                recommendResponse = JsonMananger.jsonToBean(result, RecommendResponse.class);
+            } catch (JSONException e) {
+                NLog.d(TAG, "RecommendResponse occurs JSONException e=" + e.toString());
+                return null;
+            }
+        }
+        return recommendResponse;
     }
 }

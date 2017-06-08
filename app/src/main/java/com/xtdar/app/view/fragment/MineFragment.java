@@ -50,6 +50,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private MaterialProgressBar progressBar;
     private TextView mTxtMe;
 
+
+
     public static MineFragment getInstance() {
         if (mFragment == null) {
             mFragment = new MineFragment();

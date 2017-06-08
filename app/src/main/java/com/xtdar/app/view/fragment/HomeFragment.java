@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.xtdar.app.R;
+import com.xtdar.app.presenter.HomeFragmentPresenter;
 import com.xtdar.app.view.activity.DownloadActivity;
 import com.xtdar.app.view.activity.HistoryActivity;
 import com.xtdar.app.view.activity.SearchActivity;
@@ -40,6 +41,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener  {
     private RelativeLayout layoutHistory,layoutDownload;
     private TabLayout tabLayout;
 
+    private HomeFragmentPresenter homeFragmentPresenter;
+
     public static HomeFragment getInstance() {
         if (instance == null) {
             instance = new HomeFragment();
@@ -54,6 +57,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener  {
         initViews();
         initMianViewPager();
 //        initData();
+        homeFragmentPresenter = new HomeFragmentPresenter(getContext());
+        homeFragmentPresenter.init(tabLayout);
+
         return view;
     }
 
@@ -86,8 +92,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener  {
         mFragments.add(HomeAnimationFragment.getInstance());
         mFragments.add(HomeSongFragment.getInstance());
         mFragments.add(HomeStoryFragment.getInstance());
-        mFragments.add(HomeCountryFragment.getInstance());
-        mFragments.add(HomeScienceFragment.getInstance());
+        //mFragments.add(HomeCountryFragment.getInstance());
+        //mFragments.add(HomeScienceFragment.getInstance());
 
         mFragmentPagerAdapter = new FragmentPagerAdapter(getActivity().getSupportFragmentManager()) {
             @Override
@@ -105,12 +111,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener  {
         //mViewPager.setOnPageChangeListener(new PageChangerListener());
         //initData();
         tabLayout.setupWithViewPager(mViewPager);
-        tabLayout.getTabAt(0).setText("推荐");
-        tabLayout.getTabAt(1).setText("动画");
-        tabLayout.getTabAt(2).setText("儿歌");
-        tabLayout.getTabAt(3).setText("故事");
-        tabLayout.getTabAt(4).setText("国学");
-        tabLayout.getTabAt(5).setText("科普");
+
     }
 
     @Override

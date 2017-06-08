@@ -15,13 +15,14 @@ import com.xtdar.app.model.User;
 import java.util.List;
 
 import com.xtdar.app.R;
+import com.xtdar.app.server.response.RecommendResponse;
 
 /**
  * Created by hmxbanz on 2017/3/8.
  */
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.DataHolder>  {
-    private List<User> listItems;
+    private List<RecommendResponse.DataBean.RecommendListBean> listItems;
     private LayoutInflater layoutInflater;
     private  final int TYPE_HEADER = 0;
     private  final int TYPE_NORMAL = 1;
@@ -53,7 +54,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return mHeaderView;
     }
 
-public RecyclerViewAdapter(List<User> l, Context c){
+public RecyclerViewAdapter(List<RecommendResponse.DataBean.RecommendListBean> l, Context c){
     this.listItems=l;
     this.context=c;
     this.layoutInflater=LayoutInflater.from(c);
@@ -81,17 +82,16 @@ public RecyclerViewAdapter(List<User> l, Context c){
         if(getItemViewType(position) == TYPE_FOOTER) return;
 
         final int pos = getRealPosition(holder);
-        final User listItem = listItems.get(position);
+        final RecommendResponse.DataBean.RecommendListBean listItem = listItems.get(position);
         if(holder instanceof DataHolder) {
-            holder.nickName.setText(listItem.getNickName());
-            glideImageLoader.displayImage(context,listItem.getAvator(),holder.imageView);
-            //Glide.with(context).load(listItem.getAvator()).asBitmap().into(holder.imageView);
+            holder.nickName.setText(listItem.getClass_name());
+            //glideImageLoader.displayImage(context,listItem.getAvator(),holder.imageView);
             //holder.imageView.setImageResource(listItem.getImgResource());
             if(mListener == null) return;
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mListener.onItemClick(position,listItem.getNickName());
+                    mListener.onItemClick(position,listItem.getClass_id());
                 }
             });
         }

@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.xtdar.app.loader.GlideImageLoader;
 import com.xtdar.app.model.UserList;
+import com.xtdar.app.presenter.HomeRecommendPresenter;
 import com.xtdar.app.view.activity.DetailActivity;
 import com.youth.banner.Banner;
 
@@ -35,13 +36,16 @@ public class HomeRecommendFragment extends Fragment implements RecyclerViewAdapt
     public static HomeRecommendFragment instance = null;
     public static List<?> images=new ArrayList<>();
     private RecyclerView recycleView;
-    private RecyclerViewAdapter dataAdapter;
+
     public ScrollView scrollView;
     private View view;
-    private GridLayoutManager gridLayoutManager;
+
 
     private TextView mTextSearch;
     private TabLayout mTabLayout;
+
+    private HomeRecommendPresenter homeRecommendPresenter;
+    private Banner banner;
 
     public static HomeRecommendFragment getInstance() {
         if (instance == null) {
@@ -56,6 +60,8 @@ public class HomeRecommendFragment extends Fragment implements RecyclerViewAdapt
         view = inflater.inflate(R.layout.fragment_home_recommend, null);
         initViews();
 //        initData();
+        homeRecommendPresenter = new HomeRecommendPresenter(getContext());
+        homeRecommendPresenter.init(banner,recycleView);
         return view;
     }
 
@@ -71,35 +77,28 @@ public class HomeRecommendFragment extends Fragment implements RecyclerViewAdapt
 
 
 
-        String[] urls = getResources().getStringArray(R.array.url);
+        //String[] urls = getResources().getStringArray(R.array.url);
         //String[] tips = getResources().getStringArray(R.array.title);
-        List list = Arrays.asList(urls);
-        images = new ArrayList(list);
-        Banner banner = (Banner) view.findViewById(R.id.banner);
-        //简单使用
-        banner.setImages(images);//设置图片集合
-        banner.setImageLoader(new GlideImageLoader());//设置图片加载器
-        banner.start();
+//        List list = Arrays.asList(urls);
+//        images = new ArrayList(list);
 
+        //简单使用
+        banner = (Banner) view.findViewById(R.id.banner);
+        banner.setImageLoader(new GlideImageLoader());//设置图片加载器
         //banner.setOnBannerListener(this);
 
         recycleView= (RecyclerView) view.findViewById(R.id.recyclerView);
-        gridLayoutManager=new GridLayoutManager(getContext(),2);
-        recycleView.setLayoutManager(gridLayoutManager);
-        dataAdapter = new RecyclerViewAdapter(UserList.getData(), getContext());
-        dataAdapter.setFooterView(LayoutInflater.from(getContext()).inflate(R.layout.recyclerview_footer,null));
-        recycleView.setAdapter(dataAdapter);
-        recycleView.setNestedScrollingEnabled(false);
+
         if(Build.VERSION.SDK_INT>=23)
-        recycleView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
-            @Override
-            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                if (gridLayoutManager.findLastCompletelyVisibleItemPosition()==(UserList.getData().size()-1))
-                {}
-            }
-        });
+//        recycleView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+//            @Override
+//            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+//                if (gridLayoutManager.findLastCompletelyVisibleItemPosition()==(UserList.getData().size()-1))
+//                {}
+//            }
+//        });
         //recycleView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.HORIZONTAL));
-        dataAdapter.setOnItemClickListener(this);
+        //dataAdapter.setOnItemClickListener(this);
         scrollView=(ScrollView) view.findViewById(R.id.scrollview);
         scrollView.smoothScrollTo(0, 0);
     }
