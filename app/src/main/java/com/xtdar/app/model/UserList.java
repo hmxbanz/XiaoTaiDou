@@ -18,7 +18,7 @@ public class UserList {
     {
         List<User> listItems = new ArrayList<>();
 
-        for (int i=0;i<12;i++){
+        for (int i=0;i<2;i++){
             for(int j = 0; j< UserList.icons.length; j++)
             {
                 User listItem=new User();

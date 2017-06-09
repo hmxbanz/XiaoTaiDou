@@ -8,12 +8,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_picsel_back_pressed.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_receive_voice_three.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_receive_voice_three.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_back_icon.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_back_icon.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_receive_voice_three.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_receive_voice_three.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u263a.png",
@@ -72,12 +72,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_no_hover.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f4a9.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f4a9.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_location_item_default.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_ic_location_item_default.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f4a9.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f4a9.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_voip_audio_right_cancel.png",
@@ -104,12 +104,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_cs_follow.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_voip_icon_input_video_pressed.png",
-        "source": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_voip_icon_input_video_pressed.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_cs_group_check.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_cs_group_check.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_voip_icon_input_video_pressed.png",
+        "source": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_voip_icon_input_video_pressed.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_unread_remind_list_count.png",
@@ -148,12 +148,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f4aa.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f628.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f628.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_picsel_back_normal.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_picsel_back_normal.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f628.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f628.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_no_hover.png",
@@ -180,12 +180,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f556.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u2614.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u2614.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u270c.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u270c.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u2614.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u2614.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_menu_trangle.png",
@@ -228,12 +228,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_cs_delete.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f62d.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f62d.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_cs_admin_hover.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_cs_admin_hover.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f62d.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f62d.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u26bd.png",
@@ -756,12 +756,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_ac_text_file_icon.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_location_pressed.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_ic_location_pressed.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ac_video_file_icon.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_ac_video_file_icon.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_location_pressed.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_ic_location_pressed.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_radio_button_off.png",

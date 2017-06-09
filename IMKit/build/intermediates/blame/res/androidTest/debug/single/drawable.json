@@ -52,12 +52,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_white_bg_shape.xml"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_menu_keyboard_selector.xml",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_menu_keyboard_selector.xml"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_send_toggle_selector.xml",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_send_toggle_selector.xml"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_menu_keyboard_selector.xml",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\debug\\res\\drawable\\rc_menu_keyboard_selector.xml"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_edit_text_background_selector.xml",

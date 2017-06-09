@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\release\\drawable\\rc_ed_public_service_search_selector.xml",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable\\rc_ed_public_service_search_selector.xml"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\release\\drawable\\rc_cs_admin_selector.xml",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable\\rc_cs_admin_selector.xml"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\release\\drawable\\rc_ed_public_service_search_selector.xml",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable\\rc_ed_public_service_search_selector.xml"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\release\\drawable\\rc_voip_audio_answer_selector.xml",

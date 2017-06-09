@@ -32,12 +32,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable\\rc_bg_menu.xml"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_menu_text_selector.xml",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable\\rc_menu_text_selector.xml"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_send_toggle_selector.xml",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable\\rc_send_toggle_selector.xml"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_menu_text_selector.xml",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable\\rc_menu_text_selector.xml"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\rc_voip_camera_selector.xml",

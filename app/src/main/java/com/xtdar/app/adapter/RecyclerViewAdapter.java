@@ -15,14 +15,13 @@ import com.xtdar.app.model.User;
 import java.util.List;
 
 import com.xtdar.app.R;
-import com.xtdar.app.server.response.RecommendResponse;
 
 /**
  * Created by hmxbanz on 2017/3/8.
  */
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.DataHolder>  {
-    private List<RecommendResponse.DataBean.RecommendListBean> listItems;
+    private List<User> listItems;
     private LayoutInflater layoutInflater;
     private  final int TYPE_HEADER = 0;
     private  final int TYPE_NORMAL = 1;
@@ -54,12 +53,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return mHeaderView;
     }
 
-public RecyclerViewAdapter(List<RecommendResponse.DataBean.RecommendListBean> l, Context c){
-    this.listItems=l;
-    this.context=c;
-    this.layoutInflater=LayoutInflater.from(c);
-    glideImageLoader=new GlideImageLoader();
-}
+    public RecyclerViewAdapter(List<User> l, Context c){
+        this.listItems=l;
+        this.context=c;
+        this.layoutInflater=LayoutInflater.from(c);
+        glideImageLoader=new GlideImageLoader();
+    }
 
     @Override
     public DataHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -69,7 +68,7 @@ public RecyclerViewAdapter(List<RecommendResponse.DataBean.RecommendListBean> l,
         }
         else if(mFooterView != null &&viewType == TYPE_FOOTER)
         {
-          return new DataHolder(mFooterView);
+            return new DataHolder(mFooterView);
         }
         else {
             View v = layoutInflater.inflate(R.layout.recyclerview_listitem, parent, false);
@@ -82,16 +81,17 @@ public RecyclerViewAdapter(List<RecommendResponse.DataBean.RecommendListBean> l,
         if(getItemViewType(position) == TYPE_FOOTER) return;
 
         final int pos = getRealPosition(holder);
-        final RecommendResponse.DataBean.RecommendListBean listItem = listItems.get(position);
+        final User listItem = listItems.get(position);
         if(holder instanceof DataHolder) {
-            holder.nickName.setText(listItem.getClass_name());
-            //glideImageLoader.displayImage(context,listItem.getAvator(),holder.imageView);
+            holder.nickName.setText(listItem.getNickName());
+            glideImageLoader.displayImage(context,listItem.getAvator(),holder.imageView);
+            //Glide.with(context).load(listItem.getAvator()).asBitmap().into(holder.imageView);
             //holder.imageView.setImageResource(listItem.getImgResource());
             if(mListener == null) return;
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mListener.onItemClick(position,listItem.getClass_id());
+                    mListener.onItemClick(position,listItem.getNickName());
                 }
             });
         }

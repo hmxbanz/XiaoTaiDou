@@ -12,12 +12,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable\\rc_cs_ratingbar.xml"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable\\rc_cs_evaluate_selector.xml",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable\\rc_cs_evaluate_selector.xml"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable\\rc_cs_list_divider_style.xml",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable\\rc_cs_list_divider_style.xml"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable\\rc_cs_evaluate_selector.xml",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable\\rc_cs_evaluate_selector.xml"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable\\rc_read_receipt_request_button.xml",

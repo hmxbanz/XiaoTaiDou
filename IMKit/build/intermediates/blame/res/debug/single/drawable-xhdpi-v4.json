@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_ic_def_rich_content.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_ic_def_rich_content.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_grid_camera.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_grid_camera.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_ic_def_rich_content.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_ic_def_rich_content.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_cs_close.png",
@@ -24,24 +24,24 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\u1f60e.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u2744.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\u2744.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_ic_bubble_no_left.9.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_ic_bubble_no_left.9.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u2744.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\u2744.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_ic_bubble_left.9.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_ic_bubble_left.9.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f62b.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\u1f62b.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_origin_check_sel.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_origin_check_sel.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f62b.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\u1f62b.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_origin_check_nor.png",
@@ -60,12 +60,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\u1f622.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_ic_volume_7.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_ic_volume_7.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f484.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\u1f484.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_ic_volume_7.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_ic_volume_7.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f607.png",

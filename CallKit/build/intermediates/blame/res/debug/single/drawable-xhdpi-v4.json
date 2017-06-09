@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_cs_group_cancel_normal.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_cs_group_cancel_normal.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f611.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f611.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_cs_group_cancel_normal.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_cs_group_cancel_normal.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_select_check_nor.png",
@@ -48,16 +48,16 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_ext_plugin_image.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f52b.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f52b.png"
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_ic_emoji_block.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_ic_emoji_block.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_picsel_back_normal.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_picsel_back_normal.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_ic_emoji_block.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_ic_emoji_block.png"
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f52b.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f52b.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f6ab.png",
@@ -152,12 +152,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_ic_message_block.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_default_discussion_portrait.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_default_discussion_portrait.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_voip_handfree.png",
         "source": "D:\\work\\XiaoTaiDou\\CallKit\\src\\main\\res\\drawable-xhdpi\\rc_voip_handfree.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_default_discussion_portrait.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_default_discussion_portrait.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_ic_setting_friends_add.png",
@@ -180,16 +180,16 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f3e1.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f44f.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f44f.png"
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_file_icon_file.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_file_icon_file.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_menu_keyboard.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_menu_keyboard.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_file_icon_file.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_file_icon_file.png"
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f44f.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f44f.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f004.png",
@@ -240,12 +240,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_menu_trangle.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f332.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f332.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_ic_voice_sent.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_ic_voice_sent.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f332.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f332.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_voip_audio_answer_hover.png",
@@ -276,12 +276,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_edit_text_background.9.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f636.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f636.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_ic_volume_3.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_ic_volume_3.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f636.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f636.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_ic_setting_friends_delete.png",
@@ -344,20 +344,20 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_ic_bubble_left_file.9.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_origin_check_sel.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_origin_check_sel.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u26c5.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u26c5.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f366.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f366.png"
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_origin_check_sel.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_origin_check_sel.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_ext_my_locator.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_ext_my_locator.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f366.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f366.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_icon_rt_message_right.png",
@@ -428,12 +428,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f607.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f30f.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f30f.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_ext_voice_btn_normal.9.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_ext_voice_btn_normal.9.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f30f.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f30f.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_voip_audio_answer.png",
@@ -448,12 +448,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_cs_close.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f389.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f389.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f60e.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f60e.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u1f389.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u1f389.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_cs_follow_hover.png",
@@ -720,12 +720,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_picsel_pictype_normal.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u270f.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u270f.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\rc_unread_message_count.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\rc_unread_message_count.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u270f.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\u270f.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\CallKit\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\u263a.png",

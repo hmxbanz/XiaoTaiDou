@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\design_password_eye.xml",
-        "source": "C:\\Users\\PVer\\.android\\build-cache\\42f09f80b6143b679addaae842b8d981b0a915d3\\output\\res\\drawable\\design_password_eye.xml"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
         "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\design_password_eye.xml",
+        "source": "C:\\Users\\PVer\\.android\\build-cache\\42f09f80b6143b679addaae842b8d981b0a915d3\\output\\res\\drawable\\design_password_eye.xml"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abc_text_cursor_material.xml",
@@ -16,12 +16,12 @@
         "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\drawable\\abc_item_background_holo_light.xml"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\drawable\\abc_btn_colored_material.xml"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
         "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\drawable\\abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abc_ic_go_search_api_material.xml",

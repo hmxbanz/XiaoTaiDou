@@ -1,15 +1,15 @@
 [
     {
-        "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_video_item_likes_land.png",
-        "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_video_item_likes_land.png"
+        "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_share_online_video.png",
+        "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_share_online_video.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_ve_from.png",
         "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_ve_from.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_share_online_video.png",
-        "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_share_online_video.png"
+        "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_video_item_likes_land.png",
+        "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_video_item_likes_land.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_like.png",
@@ -96,12 +96,12 @@
         "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_recomm_play.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_video_fluency_sd_land.png",
-        "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_video_fluency_sd_land.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_photo_picker_alb_land.png",
         "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_photo_picker_alb_land.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_video_fluency_sd_land.png",
+        "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_video_fluency_sd_land.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_ve_add_an.png",
@@ -160,24 +160,24 @@
         "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_show_more.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_download_land.png",
-        "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_download_land.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\smssdk_cp_default_avatar.png",
         "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\smssdk_cp_default_avatar.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_video_item_likes_liked_land.png",
-        "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_video_item_likes_liked_land.png"
+        "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_download_land.png",
+        "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_download_land.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_back_arr.png",
+        "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_back_arr.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\smssdk_cl_divider.png",
         "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\smssdk_cl_divider.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_back_arr.png",
-        "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_back_arr.png"
+        "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\srec_video_item_likes_liked_land.png",
+        "source": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\srec_video_item_likes_liked_land.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\ShareRec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_logo.png",

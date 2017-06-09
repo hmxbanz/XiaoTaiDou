@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_top_material.xml",
-        "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\drawable\\abc_cab_background_top_material.xml"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\release\\drawable\\appbarlayout_elevated.xml",
         "source": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\src\\main\\res\\drawable\\appbarlayout_elevated.xml"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\release\\drawable\\design_password_eye.xml",
@@ -36,12 +36,12 @@
         "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\drawable\\abc_ic_clear_material.xml"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_track_material.xml",
-        "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\drawable\\abc_seekbar_track_material.xml"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_ab_back_material.xml",
         "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\drawable\\abc_seekbar_track_material.xml"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_default_mtrl_shape.xml",

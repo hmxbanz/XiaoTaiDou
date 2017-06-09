@@ -4,12 +4,12 @@
         "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\design_navigation_menu_item.xml",
         "source": "C:\\Users\\PVer\\.android\\build-cache\\42f09f80b6143b679addaae842b8d981b0a915d3\\output\\res\\layout\\design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "C:\\Users\\PVer\\.android\\build-cache\\6a048fc6ef5985267fca8ecaaa7c30171f00ae93\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\coordinatortablayout\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\design_navigation_item.xml",

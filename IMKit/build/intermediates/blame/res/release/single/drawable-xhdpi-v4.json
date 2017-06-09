@@ -12,16 +12,16 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\u1f612.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\rc_ic_def_rich_content.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_ic_def_rich_content.png"
+        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\rc_send_voice_three.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_send_voice_three.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\u23f3.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\u23f3.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\rc_send_voice_three.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_send_voice_three.png"
+        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\rc_ic_def_rich_content.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_ic_def_rich_content.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\rc_file_icon_audio.png",
@@ -40,12 +40,12 @@
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_select_check_nor.png"
     },
     {
-        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\u1f609.png",
-        "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\u1f609.png"
-    },
-    {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\u1f47b.png",
         "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\u1f47b.png"
+    },
+    {
+        "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\u1f609.png",
+        "source": "D:\\work\\XiaoTaiDou\\IMKit\\src\\main\\res\\drawable-xhdpi\\u1f609.png"
     },
     {
         "merged": "D:\\work\\XiaoTaiDou\\IMKit\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\rc_cs_back_press.9.png",

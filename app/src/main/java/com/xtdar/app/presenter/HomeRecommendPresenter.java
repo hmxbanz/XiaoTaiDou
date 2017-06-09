@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 
 import com.xtdar.app.R;
 import com.xtdar.app.XtdConst;
+import com.xtdar.app.adapter.HomeRecommendAdapter;
 import com.xtdar.app.adapter.RecyclerViewAdapter;
 import com.xtdar.app.model.UserList;
 import com.xtdar.app.server.HttpException;
@@ -32,7 +33,7 @@ public class HomeRecommendPresenter extends BasePresenter implements OnDataListe
     private Banner Banner;
     private RecyclerView recycleView;
     private GridLayoutManager gridLayoutManager;
-    private RecyclerViewAdapter dataAdapter;
+    private HomeRecommendAdapter dataAdapter;
     private List<RecommendResponse.DataBean.RecommendListBean> list;
 
     public HomeRecommendPresenter(Context context){
@@ -44,7 +45,7 @@ public class HomeRecommendPresenter extends BasePresenter implements OnDataListe
         this.Banner=banner;
         this.recycleView=recycleView;
 
-        gridLayoutManager=new GridLayoutManager(mContext,2);
+        gridLayoutManager=new GridLayoutManager(mContext,1);
         recycleView.setLayoutManager(gridLayoutManager);
 
 
@@ -85,8 +86,8 @@ public class HomeRecommendPresenter extends BasePresenter implements OnDataListe
                 if (recommendResponse.getCode() == XtdConst.SUCCESS) {
                     list=recommendResponse.getData().getRecommend_list();
                     //设置列表
-                    dataAdapter = new RecyclerViewAdapter(list, mContext);
-                    dataAdapter.setFooterView(LayoutInflater.from(mContext).inflate(R.layout.recyclerview_footer,null));
+                    dataAdapter = new HomeRecommendAdapter(list, mContext);
+                    //dataAdapter.setFooterView(LayoutInflater.from(mContext).inflate(R.layout.recyclerview_footer,null));
                     recycleView.setAdapter(dataAdapter);
                     recycleView.setNestedScrollingEnabled(false);
                 }
