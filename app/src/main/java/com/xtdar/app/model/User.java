@@ -55,7 +55,7 @@ public class User implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-//        ParcelUtils.writeToParcel(dest, this.getNickName());
+//        ParcelUtils.writeToParcel(dest, this.getTitle());
 //        ParcelUtils.writeToParcel(dest, this.getLetters());
 //        ParcelUtils.writeToParcel(dest, this.getAvator());
     }

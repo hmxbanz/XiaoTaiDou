@@ -11,6 +11,7 @@ import com.xtdar.app.common.json.JsonMananger;
 import com.xtdar.app.server.request.LoginRequest;
 import com.xtdar.app.server.response.AdResponse;
 import com.xtdar.app.server.response.CaptchaResponse;
+import com.xtdar.app.server.response.ClassListResponse;
 import com.xtdar.app.server.response.CommonResponse;
 import com.xtdar.app.server.response.DetailResponse;
 import com.xtdar.app.server.response.LoginResponse;
@@ -439,17 +440,47 @@ public CommonResponse register(String cellPhone, String password, String captcha
         } catch (IOException e) {
             e.printStackTrace();
         }
-        RelateRecommendResponse detailResponse = null;
+        RelateRecommendResponse relateRecommend = null;
         if (!TextUtils.isEmpty(result)) {
             NLog.e("getRelateRecommend", result);
 
             try {
-                detailResponse = JsonMananger.jsonToBean(result, RelateRecommendResponse.class);
+                relateRecommend = JsonMananger.jsonToBean(result, RelateRecommendResponse.class);
             } catch (JSONException e) {
                 NLog.d(TAG, "RelateRecommendResponse occurs JSONException e=" + e.toString());
                 return null;
             }
         }
-        return detailResponse;
+        return relateRecommend;
+    }
+    //获取分类项列表（动画）
+    public ClassListResponse getAnimations() throws HttpException{
+        String uri = getURL("kp_dyz/cli-comm-classlist.php");
+        Response response=null;
+        try {
+            response=OkHttpUtils
+                    .get()
+                    .addParams("class_id","1")
+                    .addParams("last_item_id","0")
+                    .addParams("item_count","12")
+                    .url(uri)
+                    .build()
+                    .execute();
+            result =response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ClassListResponse  classListResponse= null;
+        if (!TextUtils.isEmpty(result)) {
+            NLog.e("getAnimations", result);
+
+            try {
+                classListResponse = JsonMananger.jsonToBean(result, ClassListResponse.class);
+            } catch (JSONException e) {
+                NLog.d(TAG, "ClassListResponse occurs JSONException e=" + e.toString());
+                return null;
+            }
+        }
+        return classListResponse;
     }
 }
