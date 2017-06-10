@@ -22,4 +22,6 @@ public class XtdConst {
     public static final String IMGURI="http://120.24.231.219/kp_dyz/";
     public static final String SERVERURI="http://120.24.231.219/";
     public static final String ISLOGIN = "isLogin";
+    public static final String ITEMID = "item_id";
+    public static final String CLASSID = "class_id";
 }

@@ -1,7 +1,6 @@
 package com.xtdar.app.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,35 +11,32 @@ import android.widget.TextView;
 
 import com.xtdar.app.R;
 import com.xtdar.app.XtdConst;
-import com.xtdar.app.common.NToast;
 import com.xtdar.app.loader.GlideImageLoader;
-import com.xtdar.app.model.UserList;
+import com.xtdar.app.presenter.DetailPresenter;
 import com.xtdar.app.server.response.RecommendResponse;
-import com.xtdar.app.view.activity.DetailActivity;
+import com.xtdar.app.server.response.RelateRecommendResponse;
 
 import java.util.List;
 
-import static com.mob.MobSDK.getContext;
-
 /**
- * Created by hugeterry(http://hugeterry.cn)
- * Date: 17/1/28 22:31
+ * Created by hmxbanz on 2017/3/8.
  */
 
-public class HomeRecommendAdapter extends RecyclerView.Adapter<HomeRecommendAdapter.DataHolder> {
-    private List<RecommendResponse.DataBean.RecommendListBean> listItems;
+public class RelateRecommendItemAdapter extends RecyclerView.Adapter<RelateRecommendItemAdapter.DataHolder>  {
+    private List<RelateRecommendResponse.DataBean> listItems;
     private LayoutInflater layoutInflater;
     private  final int TYPE_HEADER = 0;
     private  final int TYPE_NORMAL = 1;
     private  final int TYPE_FOOTER = 2;
     private View mHeaderView;
     private View mFooterView;
-    private RecyclerViewAdapter.ItemClickListener mListener;
+    private ItemClickListener mListener;
     private RecyclerView mRecyclerView;
     private GlideImageLoader glideImageLoader;
     private Context context;
 
-    public void setOnItemClickListener(RecyclerViewAdapter.ItemClickListener listener) {
+
+    public void setOnItemClickListener(ItemClickListener listener) {
         mListener = listener;
     }
     public void setHeaderView(View headerView) {
@@ -60,7 +56,7 @@ public class HomeRecommendAdapter extends RecyclerView.Adapter<HomeRecommendAdap
         return mHeaderView;
     }
 
-    public HomeRecommendAdapter(List<RecommendResponse.DataBean.RecommendListBean> l, Context c){
+    public RelateRecommendItemAdapter(List<RelateRecommendResponse.DataBean> l, Context c){
         this.listItems=l;
         this.context=c;
         this.layoutInflater=LayoutInflater.from(c);
@@ -78,7 +74,7 @@ public class HomeRecommendAdapter extends RecyclerView.Adapter<HomeRecommendAdap
             return new DataHolder(mFooterView);
         }
         else {
-            View v = layoutInflater.inflate(R.layout.listitem_recommend_title, parent, false);
+            View v = layoutInflater.inflate(R.layout.listitem_recommend_item, parent, false);
             return new DataHolder(v);
         }
     }
@@ -88,33 +84,20 @@ public class HomeRecommendAdapter extends RecyclerView.Adapter<HomeRecommendAdap
         if(getItemViewType(position) == TYPE_FOOTER) return;
 
         final int pos = getRealPosition(holder);
-        final RecommendResponse.DataBean.RecommendListBean listItem = listItems.get(position);
+        final RelateRecommendResponse.DataBean listItem = listItems.get(position);
         if(holder instanceof DataHolder) {
-            holder.txtTitle.setText(listItem.getClass_name());
-            //装入item
-            List<RecommendResponse.DataBean.RecommendListBean.DataListBean> items = listItem.getData_list();
-            GridLayoutManager gridLayoutManager=new GridLayoutManager(context,2);
-            holder.recyclerView.setLayoutManager(gridLayoutManager);
-            HomeRecommendItemAdapter dataAdapter = new HomeRecommendItemAdapter(items, context);
-            dataAdapter.setOnItemClickListener(new HomeRecommendItemAdapter.ItemClickListener() {
-                @Override
-                public void onItemClick(int position, String itemId,String classId) {
-                    DetailActivity.StartActivity(context,itemId,classId);
-                    //NToast.shortToast(context,data);
-                }
-            });
-            holder.recyclerView.setAdapter(dataAdapter);
-            //glideImageLoader.displayImage(context,listItem.getAvator(),holder.imageView);
+            holder.nickName.setText(listItem.getChapter_name());
+            glideImageLoader.displayImage(context, XtdConst.IMGURI+listItem.getItem_cover(),holder.imageView);
+            //Glide.with(context).load(listItem.getAvator()).asBitmap().into(holder.imageView);
             //holder.imageView.setImageResource(listItem.getImgResource());
             if(mListener == null) return;
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mListener.onItemClick(position,listItem.getClass_id());
+                    mListener.onItemClick(position,listItem.getItem_id(),listItem.getClass_id());
                 }
             });
         }
-
 
     }
     @Override
@@ -174,18 +157,18 @@ public class HomeRecommendAdapter extends RecyclerView.Adapter<HomeRecommendAdap
         return mHeaderView == null ? position : position - 1;
     }
     public interface ItemClickListener {
-        void onItemClick(int position, String data);
+        void onItemClick(int position, String itemId, String classId);
     }
     class DataHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
-        private TextView txtTitle;
-        private RecyclerView recyclerView;
+        private TextView nickName;
+        private ImageView imageView;
         private View listLayoutView;
 
         public DataHolder(View itemView) {
             super(itemView);
-            txtTitle = (TextView) itemView.findViewById(R.id.txt_title);
-            recyclerView = (RecyclerView) itemView.findViewById(R.id.recycler);
+            nickName = (TextView) itemView.findViewById(R.id.list_item_text);
+            imageView = (ImageView) itemView.findViewById(R.id.list_item_icon);
             listLayoutView = itemView.findViewById(R.id.list_item_layout);
         }
 
@@ -195,21 +178,17 @@ public class HomeRecommendAdapter extends RecyclerView.Adapter<HomeRecommendAdap
         public void setListLayoutView(View listLayoutView) {
             this.listLayoutView = listLayoutView;
         }
-
-        public TextView getTxtTitle() {
-            return txtTitle;
+        public ImageView getImageView() {
+            return imageView;
         }
-
-        public void setTxtTitle(TextView txtTitle) {
-            this.txtTitle = txtTitle;
+        public void setImageView(ImageView imageView) {
+            this.imageView = imageView;
         }
-
-        public RecyclerView getRecyclerView() {
-            return recyclerView;
+        public TextView getNickName() {
+            return nickName;
         }
-
-        public void setRecyclerView(RecyclerView recyclerView) {
-            this.recyclerView = recyclerView;
+        public void setNickName(TextView nickName) {
+            this.nickName = nickName;
         }
 
         @Override

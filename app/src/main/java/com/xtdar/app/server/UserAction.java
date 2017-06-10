@@ -5,14 +5,17 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.alibaba.fastjson.JSONException;
+import com.xtdar.app.XtdConst;
 import com.xtdar.app.common.NLog;
 import com.xtdar.app.common.json.JsonMananger;
 import com.xtdar.app.server.request.LoginRequest;
 import com.xtdar.app.server.response.AdResponse;
 import com.xtdar.app.server.response.CaptchaResponse;
 import com.xtdar.app.server.response.CommonResponse;
+import com.xtdar.app.server.response.DetailResponse;
 import com.xtdar.app.server.response.LoginResponse;
 import com.xtdar.app.server.response.RecommendResponse;
+import com.xtdar.app.server.response.RelateRecommendResponse;
 import com.xtdar.app.server.response.TagResponse;
 import com.xtdar.app.server.response.UserInfoResponse;
 import com.xtdar.app.server.response.VersionResponse;
@@ -41,6 +44,7 @@ public class UserAction extends BaseAction {
     private String result;
     public String token;
     public static UserAction instance;
+    private Object relateRecommend;
 
     /**
      * 构造方法
@@ -361,5 +365,91 @@ public CommonResponse register(String cellPhone, String password, String captcha
             }
         }
         return recommendResponse;
+    }
+//项详情(图文、视频、音频)
+    public DetailResponse getDetail(String itemId) throws HttpException{
+        String uri = getURL("kp_dyz/cli-comm-itemdetail.php");
+        Response response=null;
+        try {
+            response=OkHttpUtils
+                    .get()
+                    .addParams(XtdConst.ITEMID,itemId)
+                    .url(uri)
+                    .build()
+                    .execute();
+            result =response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        DetailResponse detailResponse = null;
+        if (!TextUtils.isEmpty(result)) {
+            NLog.e("getDetail", result);
+
+            try {
+                detailResponse = JsonMananger.jsonToBean(result, DetailResponse.class);
+            } catch (JSONException e) {
+                NLog.d(TAG, "DetailResponse occurs JSONException e=" + e.toString());
+                return null;
+            }
+        }
+        return detailResponse;
+    }
+//收藏
+        public CommonResponse addFavor(String itemId) throws HttpException{
+            String uri = getURL("kp_dyz/cli-api-setcollect.php");
+            Response response=null;
+            try {
+                response=OkHttpUtils
+                        .get()
+                        .addParams(XtdConst.ITEMID,itemId)
+                        .addParams(XtdConst.ACCESS_TOKEN,token)
+                        .url(uri)
+                        .build()
+                        .execute();
+                result =response.body().string();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            CommonResponse commonResponse = null;
+            if (!TextUtils.isEmpty(result)) {
+                NLog.e("getDetail", result);
+
+                try {
+                    commonResponse = JsonMananger.jsonToBean(result, CommonResponse.class);
+                } catch (JSONException e) {
+                    NLog.d(TAG, "DetailResponse occurs JSONException e=" + e.toString());
+                    return null;
+                }
+            }
+            return commonResponse;
+    }
+
+    public RelateRecommendResponse getRelateRecommend(String classId) throws HttpException{
+        String uri = getURL("kp_dyz/cli-comm-classrecommend.php");
+        Response response=null;
+        try {
+            response=OkHttpUtils
+                    .get()
+                    .addParams(XtdConst.CLASSID,classId)
+                    .addParams("item_count","6")
+                    .url(uri)
+                    .build()
+                    .execute();
+            result =response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        RelateRecommendResponse detailResponse = null;
+        if (!TextUtils.isEmpty(result)) {
+            NLog.e("getRelateRecommend", result);
+
+            try {
+                detailResponse = JsonMananger.jsonToBean(result, RelateRecommendResponse.class);
+            } catch (JSONException e) {
+                NLog.d(TAG, "RelateRecommendResponse occurs JSONException e=" + e.toString());
+                return null;
+            }
+        }
+        return detailResponse;
     }
 }

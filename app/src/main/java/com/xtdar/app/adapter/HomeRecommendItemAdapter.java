@@ -92,7 +92,7 @@ public class HomeRecommendItemAdapter extends RecyclerView.Adapter<HomeRecommend
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mListener.onItemClick(position,listItem.getItem_id());
+                    mListener.onItemClick(position,listItem.getItem_id(),listItem.getClass_id());
                 }
             });
         }
@@ -155,7 +155,7 @@ public class HomeRecommendItemAdapter extends RecyclerView.Adapter<HomeRecommend
         return mHeaderView == null ? position : position - 1;
     }
     public interface ItemClickListener {
-        void onItemClick(int position, String data);
+        void onItemClick(int position, String itemId,String classId);
     }
     class DataHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {

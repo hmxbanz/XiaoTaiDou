@@ -44,8 +44,9 @@
                     android:layout_height="50dp">
 
                     <TextView
+                        android:id="@+id/title"
                         android:layout_marginLeft="10dp"
-                        android:text="哆啦A梦梦想之歌"
+                        android:text="标题"
                         android:layout_width="0dp"
                         android:layout_weight="5"
                         android:gravity="center_vertical"
@@ -73,6 +74,7 @@
                         android:layout_width="1dp"
                         android:layout_height="match_parent" />
                     <LinearLayout
+                        android:id="@+id/layout_favor"
                         android:paddingTop="10dp"
                         android:orientation="vertical"
                         android:layout_width="0dp"

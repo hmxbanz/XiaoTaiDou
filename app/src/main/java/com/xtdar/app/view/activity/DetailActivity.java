@@ -9,11 +9,9 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +19,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,9 +32,10 @@ import com.lzy.ninegrid.preview.ImagePreviewActivity;
 import com.shuyu.gsyvideoplayer.listener.LockClickListener;
 import com.shuyu.gsyvideoplayer.utils.OrientationUtils;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
+import com.xtdar.app.XtdConst;
 import com.xtdar.app.adapter.RecyclerViewAdapter;
 import com.xtdar.app.model.UserList;
-import com.xtdar.app.presenter.GetUserPresenter;
+import com.xtdar.app.presenter.DetailPresenter;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -50,13 +50,12 @@ import com.xtdar.app.view.fragment.InfoFragment;
 import com.xtdar.app.view.fragment.LiftShareFragment;
 
 
-public class DetailActivity extends AppCompatActivity implements RecyclerViewAdapter.ItemClickListener,View.OnClickListener {
+public class DetailActivity extends BaseActivity implements RecyclerViewAdapter.ItemClickListener,View.OnClickListener {
     public static List<?> images=new ArrayList<>();
     private RecyclerView recycleView;
-    private RecyclerViewAdapter dataAdapter;
     public ScrollView scrollView;
     private View view;
-    private GridLayoutManager gridLayoutManager;
+
 
     ///////////////////////////
     private CoordinatorTabLayout mCoordinatorTabLayout;
@@ -64,14 +63,11 @@ public class DetailActivity extends AppCompatActivity implements RecyclerViewAda
     private ArrayList<Fragment> mFragments;
     private final String[] mTabTitles = {"个人资料", "条件", "动态", "相册"};
     private ViewPager mViewPager;
-    private TextView mTextNickName, mTextIntro;
-    private Button mBtnThumbsUp, mBtnAddFavor, mBtnAddFriend, mBtnAddMessage;
-    private ImageView mSelectableRoundedImageView;
-    private GetUserPresenter mGetUserPresenter;
+    private DetailPresenter mDetailPresenter;
     private StandardGSYVideoPlayer videoPlayer;
-    private OrientationUtils orientationUtils;
-    private boolean isPlay;
-    private boolean isPause;
+
+    private TextView title;
+    private LinearLayout layoutFavor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,26 +79,15 @@ public class DetailActivity extends AppCompatActivity implements RecyclerViewAda
 
         initViews();
         //initDatas();
-        mGetUserPresenter = new GetUserPresenter(this);
-        mGetUserPresenter.init();
+        mDetailPresenter = new DetailPresenter(this);
+        mDetailPresenter.init(videoPlayer,title,recycleView);
+
+    }
+
+    private void initViews() {
+        //mCoordinatorTabLayout = (CoordinatorTabLayout) findViewById(R.id.coordinatortablayout);
 
         recycleView= (RecyclerView) findViewById(R.id.recyclerView);
-        gridLayoutManager=new GridLayoutManager(this,2);
-        recycleView.setLayoutManager(gridLayoutManager);
-        dataAdapter = new RecyclerViewAdapter(UserList.getData(), this);
-        //dataAdapter.setFooterView(LayoutInflater.from(this).inflate(R.layout.recyclerview_footer,null));
-        recycleView.setAdapter(dataAdapter);
-        recycleView.setNestedScrollingEnabled(false);
-        if(Build.VERSION.SDK_INT>=23)
-            recycleView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
-                @Override
-                public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                    if (gridLayoutManager.findLastCompletelyVisibleItemPosition()==(UserList.getData().size()-1))
-                    {}
-                }
-            });
-        //recycleView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.HORIZONTAL));
-        dataAdapter.setOnItemClickListener(this);
 
 
         AppBarLayout app_bar_layout = (AppBarLayout) findViewById(R.id.app_bar_layout);
@@ -116,84 +101,14 @@ public class DetailActivity extends AppCompatActivity implements RecyclerViewAda
             }
         });
 
-        String url = "http://baobab.wdjcdn.com/14564977406580.mp4";
+        //String url = "http://baobab.wdjcdn.com/14564977406580.mp4";
         videoPlayer= (StandardGSYVideoPlayer) findViewById(R.id.detail_player);
-        videoPlayer.setUp(url, false, null, "");
-        //增加封面
-        ImageView imageView = new ImageView(this);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setImageResource(R.mipmap.xxx1);
-        videoPlayer.setThumbImageView(imageView);
-
-        //resolveNormalVideoUI();
-
-        //外部辅助的旋转，帮助全屏
-        orientationUtils = new OrientationUtils(this, videoPlayer);
-        //初始化不打开外部的旋转
-        orientationUtils.setEnable(false);
-
-        videoPlayer.setIsTouchWiget(true);
-        //detailPlayer.setIsTouchWigetFull(false);
-        //关闭自动旋转
-        videoPlayer.setRotateViewAuto(false);
-        videoPlayer.setLockLand(false);
-        videoPlayer.setShowFullAnimation(false);
-        videoPlayer.setNeedLockFull(true);
-        //detailPlayer.setOpenPreView(false);
-        videoPlayer.getFullscreenButton().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //直接横屏
-                orientationUtils.resolveByClick();
-
-                //第一个true是否需要隐藏actionbar，第二个true是否需要隐藏statusbar
-                videoPlayer.startWindowFullscreen(DetailActivity.this, true, true);
-            }
-        });
-
-        videoPlayer.setStandardVideoAllCallBack(new SampleListener() {
-            @Override
-            public void onPrepared(String url, Object... objects) {
-                super.onPrepared(url, objects);
-                //开始播放了才能旋转和全屏
-                orientationUtils.setEnable(true);
-                isPlay = true;
-            }
-
-            @Override
-            public void onAutoComplete(String url, Object... objects) {
-                super.onAutoComplete(url, objects);
-            }
-
-            @Override
-            public void onClickStartError(String url, Object... objects) {
-                super.onClickStartError(url, objects);
-            }
-
-            @Override
-            public void onQuitFullscreen(String url, Object... objects) {
-                super.onQuitFullscreen(url, objects);
-                if (orientationUtils != null) {
-                    orientationUtils.backToProtVideo();
-                }
-            }
-        });
-
-        videoPlayer.setLockClickListener(new LockClickListener() {
-            @Override
-            public void onClick(View view, boolean lock) {
-                if (orientationUtils != null) {
-                    //配合下方的onConfigurationChanged
-                    orientationUtils.setEnable(!lock);
-                }
-            }
-        });
 
 
-    }
 
-    private void initViews() {
-        //mCoordinatorTabLayout = (CoordinatorTabLayout) findViewById(R.id.coordinatortablayout);
+        title = (TextView) findViewById(R.id.title);
+        layoutFavor = (LinearLayout) findViewById(R.id.layout_favor);
+        layoutFavor.setOnClickListener(this);
 
         //initFragments();
         //initViewPager();
@@ -239,31 +154,10 @@ public class DetailActivity extends AppCompatActivity implements RecyclerViewAda
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.img_avator:
-                ArrayList<ImageInfo> imageInfo=new ArrayList<>();
-                ImageInfo img=new ImageInfo();
-                img.setImageViewWidth(5);
-                img.setImageViewHeight(5);
-                img.setImageViewX(200);
-                img.setImageViewY(200);
-                img.setBigImageUrl("http://www.xtdar.com//Images/User/2017/02/02/2017020223391971_b.jpg");
-                img.setThumbnailUrl("http://www.xtdar.com/Images/User/2017/02/02/2017020223391971_s.jpg");
-
-                imageInfo.add(img);
-
-                NineGridView.setImageLoader(new GlideImageLoader());
-
-                Intent intent = new Intent(this, ImagePreviewActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable(ImagePreviewActivity.IMAGE_INFO, (Serializable) imageInfo);
-                bundle.putInt(ImagePreviewActivity.CURRENT_ITEM, 0);
-                intent.putExtras(bundle);
-                this.startActivity(intent);
-                ((Activity) this).overridePendingTransition(0, 0);
+            case R.id.layout_favor:
+                mDetailPresenter.addFavor();
                 break;
-            case R.id.layout_register:
-                startActivity(new Intent(this,RegisterActivity.class));
-                break;
+
         }
     }
     @Override
@@ -313,5 +207,11 @@ public class DetailActivity extends AppCompatActivity implements RecyclerViewAda
         Toast.makeText(this,"你点击了位置："+String.valueOf(position)+"-标题："+data,Toast.LENGTH_SHORT).show();
     }
 
+    public static void StartActivity(Context context,String itemId,String classId) {
+        Intent intent = new Intent(context, DetailActivity.class);
+        intent.putExtra(XtdConst.ITEMID,itemId);
+        intent.putExtra(XtdConst.CLASSID,classId);
+        context.startActivity(intent);
+    }
 
 }
