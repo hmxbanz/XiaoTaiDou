@@ -118,7 +118,7 @@ public class ClassListAnimationAdapter extends RecyclerView.Adapter<RecyclerView
             dataDolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mListener.onItemClick(position,listItem.getItem_id());
+                    mListener.onItemClick(position,listItem.getItem_id(),listItem.getClass_id());
                 }
             });
         }
@@ -187,7 +187,7 @@ public class ClassListAnimationAdapter extends RecyclerView.Adapter<RecyclerView
     }
 
     public interface ItemClickListener {
-        void onItemClick(int position, String data);
+        void onItemClick(int position, String itemId,String classId);
     }
     class HeaderHolder extends RecyclerView.ViewHolder  {
         private Banner banner;

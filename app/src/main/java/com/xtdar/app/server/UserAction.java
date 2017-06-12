@@ -454,15 +454,15 @@ public CommonResponse register(String cellPhone, String password, String captcha
         return relateRecommend;
     }
     //获取分类项列表（动画）
-    public ClassListResponse getAnimations() throws HttpException{
+    public ClassListResponse getAnimations(String class_id,String last_item_id,String item_count) throws HttpException{
         String uri = getURL("kp_dyz/cli-comm-classlist.php");
         Response response=null;
         try {
             response=OkHttpUtils
                     .get()
-                    .addParams("class_id","1")
-                    .addParams("last_item_id","0")
-                    .addParams("item_count","12")
+                    .addParams("class_id",class_id)
+                    .addParams("last_item_id",last_item_id)
+                    .addParams("item_count",item_count)
                     .url(uri)
                     .build()
                     .execute();
