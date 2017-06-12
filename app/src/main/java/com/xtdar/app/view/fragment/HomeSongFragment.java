@@ -19,6 +19,7 @@ import com.xtdar.app.R;
 import com.xtdar.app.adapter.RecyclerViewAdapter;
 import com.xtdar.app.loader.GlideImageLoader;
 import com.xtdar.app.model.UserList;
+import com.xtdar.app.presenter.HomeSongPresenter;
 import com.xtdar.app.view.activity.DetailActivity;
 import com.youth.banner.Banner;
 
@@ -30,7 +31,7 @@ import java.util.List;
  * Created by AMing on 16/6/21.
  * Company RongCloud
  */
-public class HomeSongFragment extends Fragment implements RecyclerViewAdapter.ItemClickListener {
+public class HomeSongFragment extends Fragment {
     public static HomeSongFragment instance = null;
     public static List<?> images=new ArrayList<>();
     private RecyclerView recycleView;
@@ -42,6 +43,8 @@ public class HomeSongFragment extends Fragment implements RecyclerViewAdapter.It
     private TextView mTextSearch;
     private TabLayout mTabLayout;
 
+    private HomeSongPresenter homeSongPresenter;
+
     public static HomeSongFragment getInstance() {
         if (instance == null) {
             instance = new HomeSongFragment();
@@ -52,67 +55,23 @@ public class HomeSongFragment extends Fragment implements RecyclerViewAdapter.It
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_home_recommend, null);
+        view = inflater.inflate(R.layout.fragment_home_animation, null);
         initViews();
 //        initData();
+        homeSongPresenter = new HomeSongPresenter(getContext());
+        homeSongPresenter.init(recycleView);
         return view;
     }
 
     private void initViews() {
-//        TypedArray typedArray = context.obtainStyledAttributes(attrs
-//                , cn.hugeterry.coordinatortablayout.R.styleable.CoordinatorTabLayout);
-        //mTabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
-//        int tabIndicatorColor = typedArray.getColor(cn.hugeterry.coordinatortablayout.R.styleable.CoordinatorTabLayout_tabIndicatorColor, getResources().getColor(cn.hugeterry.coordinatortablayout.R.color.mainColorPinkDark));
-//        mTabLayout.setSelectedTabIndicatorColor(tabIndicatorColor);
-//
-//        int tabTextColor = typedArray.getColor(cn.hugeterry.coordinatortablayout.R.styleable.CoordinatorTabLayout_tabTextColor, getResources().getColor(cn.hugeterry.coordinatortablayout.R.color.mainColorPinkDark));
-//        mTabLayout.setTabTextColors(ColorStateList.valueOf(tabTextColor));
-
-
-
-        String[] urls = getResources().getStringArray(R.array.url);
-        //String[] tips = getResources().getStringArray(R.array.title);
-        List list = Arrays.asList(urls);
-        images = new ArrayList(list);
-        Banner banner = (Banner) view.findViewById(R.id.banner);
-        //简单使用
-        banner.setImages(images);//设置图片集合
-        banner.setImageLoader(new GlideImageLoader());//设置图片加载器
-        banner.start();
-
-        //banner.setOnBannerListener(this);
 
         recycleView= (RecyclerView) view.findViewById(R.id.recyclerView);
-        gridLayoutManager=new GridLayoutManager(getContext(),2);
-        recycleView.setLayoutManager(gridLayoutManager);
-        dataAdapter = new RecyclerViewAdapter(UserList.getData(), getContext());
-        dataAdapter.setFooterView(LayoutInflater.from(getContext()).inflate(R.layout.recyclerview_footer,null));
-        recycleView.setAdapter(dataAdapter);
-        recycleView.setNestedScrollingEnabled(false);
-        if(Build.VERSION.SDK_INT>=23)
-        recycleView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
-            @Override
-            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                if (gridLayoutManager.findLastCompletelyVisibleItemPosition()==(UserList.getData().size()-1))
-                {}
-            }
-        });
-        //recycleView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.HORIZONTAL));
-        dataAdapter.setOnItemClickListener(this);
-        scrollView=(ScrollView) view.findViewById(R.id.scrollview);
-        scrollView.smoothScrollTo(0, 0);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
         //BroadcastManager.getInstance(getActivity()).destroy(SealConst.CHANGEINFO);
-    }
-
-    @Override
-    public void onItemClick(int position, String data) {
-        getActivity().startActivity(new Intent(getActivity(), DetailActivity.class));
-        Toast.makeText(getContext(),"你点击了位置："+String.valueOf(position)+"-标题："+data,Toast.LENGTH_SHORT).show();
     }
 
 

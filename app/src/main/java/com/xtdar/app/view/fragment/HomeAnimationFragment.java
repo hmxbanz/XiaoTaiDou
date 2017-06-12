@@ -65,34 +65,9 @@ public class HomeAnimationFragment extends Fragment implements RecyclerViewAdapt
     }
 
     private void initViews() {
-//        TypedArray typedArray = context.obtainStyledAttributes(attrs
-//                , cn.hugeterry.coordinatortablayout.R.styleable.CoordinatorTabLayout);
-        //mTabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
-//        int tabIndicatorColor = typedArray.getColor(cn.hugeterry.coordinatortablayout.R.styleable.CoordinatorTabLayout_tabIndicatorColor, getResources().getColor(cn.hugeterry.coordinatortablayout.R.color.mainColorPinkDark));
-//        mTabLayout.setSelectedTabIndicatorColor(tabIndicatorColor);
-//
-//        int tabTextColor = typedArray.getColor(cn.hugeterry.coordinatortablayout.R.styleable.CoordinatorTabLayout_tabTextColor, getResources().getColor(cn.hugeterry.coordinatortablayout.R.color.mainColorPinkDark));
-//        mTabLayout.setTabTextColors(ColorStateList.valueOf(tabTextColor));
-
-
 
         recycleView= (RecyclerView) view.findViewById(R.id.recyclerView);
-        //gridLayoutManager=new GridLayoutManager(getContext(),2);
-        //recycleView.setLayoutManager(gridLayoutManager);
-        //dataAdapter = new RecyclerViewAdapter(UserList.getData(), getContext());
-        //dataAdapter.setFooterView(LayoutInflater.from(getContext()).inflate(R.layout.recyclerview_footer,null));
-        //recycleView.setAdapter(dataAdapter);
-        //recycleView.setNestedScrollingEnabled(false);
-//        if(Build.VERSION.SDK_INT>=23)
-//        recycleView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
-//            @Override
-//            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-//                if (gridLayoutManager.findLastCompletelyVisibleItemPosition()==(UserList.getData().size()-1))
-//                {}
-//            }
-//        });
-        //recycleView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.HORIZONTAL));
-        //dataAdapter.setOnItemClickListener(this);
+
 
     }
 
