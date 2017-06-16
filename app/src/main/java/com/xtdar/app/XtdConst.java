@@ -24,4 +24,6 @@ public class XtdConst {
     public static final String ISLOGIN = "isLogin";
     public static final String ITEMID = "item_id";
     public static final String CLASSID = "class_id";
+    public static final String ALBUMID = "albumId";
+    public static final String SONGID = "songId";
 }

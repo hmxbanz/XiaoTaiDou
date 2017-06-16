@@ -84,7 +84,8 @@ public class HomeRecommendItemAdapter extends RecyclerView.Adapter<HomeRecommend
         final int pos = getRealPosition(holder);
         final RecommendResponse.DataBean.RecommendListBean.DataListBean listItem = listItems.get(position);
         if(holder instanceof DataHolder) {
-            holder.nickName.setText(listItem.getChapter_name());
+            holder.nickName.setText(listItem.getItem_title());
+            holder.className.setText(listItem.getChapter_name());
             glideImageLoader.displayImage(context, XtdConst.IMGURI+listItem.getItem_cover(),holder.imageView);
             //Glide.with(context).load(listItem.getAvator()).asBitmap().into(holder.imageView);
             //holder.imageView.setImageResource(listItem.getImgResource());
@@ -160,12 +161,14 @@ public class HomeRecommendItemAdapter extends RecyclerView.Adapter<HomeRecommend
     class DataHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
         private TextView nickName;
+        private TextView className;
         private ImageView imageView;
         private View listLayoutView;
 
         public DataHolder(View itemView) {
             super(itemView);
             nickName = (TextView) itemView.findViewById(R.id.list_item_text);
+            className = (TextView) itemView.findViewById(R.id.list_item_text2);
             imageView = (ImageView) itemView.findViewById(R.id.list_item_icon);
             listLayoutView = itemView.findViewById(R.id.list_item_layout);
         }

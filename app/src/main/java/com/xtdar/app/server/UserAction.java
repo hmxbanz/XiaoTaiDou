@@ -17,6 +17,7 @@ import com.xtdar.app.server.response.DetailResponse;
 import com.xtdar.app.server.response.LoginResponse;
 import com.xtdar.app.server.response.RecommendResponse;
 import com.xtdar.app.server.response.RelateRecommendResponse;
+import com.xtdar.app.server.response.SongDetailResponse;
 import com.xtdar.app.server.response.TagResponse;
 import com.xtdar.app.server.response.UserInfoResponse;
 import com.xtdar.app.server.response.VersionResponse;
@@ -482,5 +483,33 @@ public CommonResponse register(String cellPhone, String password, String captcha
             }
         }
         return classListResponse;
+    }
+
+    public SongDetailResponse getSongAlbumDetail(String itemId) throws HttpException {
+        String uri = getURL("kp_dyz/cli-comm-albumdetail.php");
+        Response response=null;
+        try {
+            response=OkHttpUtils
+                    .get()
+                    .addParams(XtdConst.ITEMID,itemId)
+                    .url(uri)
+                    .build()
+                    .execute();
+            result =response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        SongDetailResponse detailResponse = null;
+        if (!TextUtils.isEmpty(result)) {
+            NLog.e("getSongAlbumDetail", result);
+
+            try {
+                detailResponse = JsonMananger.jsonToBean(result, SongDetailResponse.class);
+            } catch (JSONException e) {
+                NLog.d(TAG, "DetailResponse occurs JSONException e=" + e.toString());
+                return null;
+            }
+        }
+        return detailResponse;
     }
 }

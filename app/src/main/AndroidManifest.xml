@@ -197,6 +197,8 @@
         <activity android:name=".view.activity.DeviceActivity" />
         <activity android:name=".view.activity.HistoryActivity" />
         <activity android:name=".view.activity.DownloadActivity" />
+        <activity android:name=".view.activity.SongAlbumActivity" />
+        <activity android:name=".view.activity.SongDetailActivity" />
         <activity
             android:name=".view.activity.ConversationListActivity"
             android:screenOrientation="portrait"

@@ -1,14 +1,17 @@
 package com.xtdar.app.view.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xtdar.app.R;
+import com.xtdar.app.XtdConst;
 import com.xtdar.app.presenter.LoginPresenter;
 import com.xtdar.app.presenter.SongAlbumPresenter;
 
@@ -16,6 +19,7 @@ import com.xtdar.app.presenter.SongAlbumPresenter;
 public class SongAlbumActivity extends BaseActivity implements View.OnClickListener {
 
     private SongAlbumPresenter songAlbumPresenter;
+    private ListView listview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +28,7 @@ public class SongAlbumActivity extends BaseActivity implements View.OnClickListe
 
         initViews();
         songAlbumPresenter = new SongAlbumPresenter(this);
-        songAlbumPresenter.init();
+        songAlbumPresenter.init(listview);
     }
 
     private void initViews() {
@@ -32,6 +36,7 @@ public class SongAlbumActivity extends BaseActivity implements View.OnClickListe
         layout_back.setOnClickListener(this);
         txtTitle =(TextView) findViewById(R.id.text_title);
         txtTitle.setText("专辑详情");
+        listview=(ListView)findViewById(R.id.listview);
 
     }
 
@@ -43,5 +48,11 @@ public class SongAlbumActivity extends BaseActivity implements View.OnClickListe
                 break;
 
         }
+    }
+
+    public static void StartActivity(Context context, String itemId) {
+        Intent intent = new Intent(context, SongAlbumActivity.class);
+        intent.putExtra(XtdConst.ITEMID,itemId);
+        context.startActivity(intent);
     }
 }

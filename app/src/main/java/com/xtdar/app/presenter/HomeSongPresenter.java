@@ -14,6 +14,7 @@ import com.xtdar.app.server.async.OnDataListener;
 import com.xtdar.app.server.response.AdResponse;
 import com.xtdar.app.server.response.ClassListResponse;
 import com.xtdar.app.view.activity.DetailActivity;
+import com.xtdar.app.view.activity.SongAlbumActivity;
 import com.xtdar.app.view.widget.LoadDialog;
 import com.youth.banner.Banner;
 
@@ -105,6 +106,6 @@ public class HomeSongPresenter extends BasePresenter implements OnDataListener,C
 
     @Override
     public void onItemClick(int position, String item_id,String class_id) {
-        DetailActivity.StartActivity(mContext,item_id,class_id);
+        SongAlbumActivity.StartActivity(mContext,item_id);
     }
 }
