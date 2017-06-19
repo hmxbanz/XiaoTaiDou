@@ -15,6 +15,8 @@ import com.shuyu.gsyvideoplayer.GSYVideoManager;
 import com.shuyu.gsyvideoplayer.GSYVideoPlayer;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 import com.xtdar.app.R;
+import com.xtdar.app.presenter.HomeShowPresenter;
+import com.xtdar.app.server.response.ShowResponse;
 import com.xtdar.app.video.RecyclerBaseAdapter;
 import com.xtdar.app.video.RecyclerItemNormalHolder;
 import com.xtdar.app.video.RecyclerNormalAdapter;
@@ -35,13 +37,11 @@ public class ShowFragment extends Fragment  {
     //@BindView(R.id.list_item_recycler)
     RecyclerView videoList;
 
-    LinearLayoutManager linearLayoutManager;
 
-    RecyclerBaseAdapter recyclerBaseAdapter;
-
-    List<VideoModel> dataList = new ArrayList<>();
+    List<ShowResponse.DataBean> dataList = new ArrayList<>();
 
     private View view;
+    HomeShowPresenter homeShowPresenter;
     public static ShowFragment instance = null;
 
 
@@ -65,61 +65,21 @@ public class ShowFragment extends Fragment  {
         txtRight.setVisibility(View.VISIBLE);
         txtRight.setTextColor(getResources().getColor(R.color.titleBlue));
         txtRight.setText("玩一把");
+
         resolveData();
 
-        final RecyclerNormalAdapter recyclerNormalAdapter = new RecyclerNormalAdapter(getActivity(), dataList);
-        linearLayoutManager = new LinearLayoutManager(getActivity());
-        videoList.setLayoutManager(linearLayoutManager);
-        videoList.setAdapter(recyclerNormalAdapter);
-
-        videoList.addOnScrollListener(new RecyclerView.OnScrollListener() {
-
-            int firstVisibleItem, lastVisibleItem;
-
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-            }
-
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                firstVisibleItem   = linearLayoutManager.findFirstVisibleItemPosition();
-                lastVisibleItem = linearLayoutManager.findLastVisibleItemPosition();
-                //大于0说明有播放
-                if (GSYVideoManager.instance().getPlayPosition() >= 0) {
-                    //当前播放的位置
-                    int position = GSYVideoManager.instance().getPlayPosition();
-                    //对应的播放列表TAG
-                    if (GSYVideoManager.instance().getPlayTag().equals(RecyclerItemNormalHolder.TAG)
-                            && (position < firstVisibleItem || position > lastVisibleItem)) {
-
-                        //如果滑出去了上面和下面就是否，和今日头条一样
-                        GSYVideoPlayer.releaseAllVideos();
-                        recyclerNormalAdapter.notifyDataSetChanged();
-                    }
-                }
-            }
-        });
+        homeShowPresenter = new HomeShowPresenter(getContext());
+        homeShowPresenter.init(videoList);
         return view;
-    }
 
-    private void initViews() {
 
     }
-    private void initMianViewPager() {
-
-    }
-
-
 
     private void resolveData() {
         for (int i = 0; i < 19; i++) {
-            VideoModel videoModel = new VideoModel();
+            ShowResponse.DataBean videoModel = new ShowResponse.DataBean();
             dataList.add(videoModel);
         }
-        if (recyclerBaseAdapter != null)
-            recyclerBaseAdapter.notifyDataSetChanged();
     }
     public boolean onBackPressed() {
         if (StandardGSYVideoPlayer.backFromWindowFull(getActivity())) {

@@ -17,6 +17,7 @@ import com.xtdar.app.server.response.DetailResponse;
 import com.xtdar.app.server.response.LoginResponse;
 import com.xtdar.app.server.response.RecommendResponse;
 import com.xtdar.app.server.response.RelateRecommendResponse;
+import com.xtdar.app.server.response.ShowResponse;
 import com.xtdar.app.server.response.SongDetailResponse;
 import com.xtdar.app.server.response.TagResponse;
 import com.xtdar.app.server.response.UserInfoResponse;
@@ -511,5 +512,34 @@ public CommonResponse register(String cellPhone, String password, String captcha
             }
         }
         return detailResponse;
+    }
+
+    public ShowResponse getShowList() throws HttpException {
+        String uri = getURL("kp_dyz/cli-comm-showitemlist.php");
+        Response response=null;
+        try {
+            response=OkHttpUtils
+                    .get()
+                    .addParams("list_count","12")
+                    .addParams("last_show_id","0")
+                    .url(uri)
+                    .build()
+                    .execute();
+            result =response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ShowResponse showResponse = null;
+        if (!TextUtils.isEmpty(result)) {
+            NLog.e("getShowList", result);
+
+            try {
+                showResponse = JsonMananger.jsonToBean(result, ShowResponse.class);
+            } catch (JSONException e) {
+                NLog.d(TAG, "ShowResponse occurs JSONException e=" + e.toString());
+                return null;
+            }
+        }
+        return showResponse;
     }
 }

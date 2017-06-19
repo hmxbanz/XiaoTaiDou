@@ -2,8 +2,10 @@ package com.xtdar.app.presenter;
 
 import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 
 import com.xtdar.app.R;
 import com.xtdar.app.XtdConst;
@@ -33,6 +35,9 @@ public class HomeAnimationPresenter extends BasePresenter implements OnDataListe
     private ClassListAnimationAdapter dataAdapter;
     private List<ClassListResponse.DataBean> list=new ArrayList<>();
     private String lastItem ="0";
+    private int lastOffset;
+    private int lastPosition;
+    private boolean isAdapterSetted=false;
 
     public HomeAnimationPresenter(Context context){
         super(context);
@@ -49,6 +54,14 @@ public class HomeAnimationPresenter extends BasePresenter implements OnDataListe
             public void onLoadMore(int currentPage) {
                 LoadDialog.show(mContext);
                 atm.request(GETANIMATION,HomeAnimationPresenter.this);
+            }
+
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if(recyclerView.getLayoutManager() != null) {
+                    getPositionAndOffset();
+                }
             }
         });
         recyclerView.setNestedScrollingEnabled(false);
@@ -95,7 +108,12 @@ public class HomeAnimationPresenter extends BasePresenter implements OnDataListe
                     dataAdapter.setListItems(list);
                     dataAdapter.setOnItemClickListener(this);
                     //dataAdapter.setFooterView(LayoutInflater.from(mContext).inflate(R.layout.recyclerview_footer,null));
-                    recyclerView.setAdapter(dataAdapter);
+
+                    if(!isAdapterSetted)
+                        recyclerView.setAdapter(dataAdapter);
+                    isAdapterSetted=true;
+                    dataAdapter.notifyDataSetChanged();
+
 
                 }
                 break;
@@ -106,5 +124,29 @@ public class HomeAnimationPresenter extends BasePresenter implements OnDataListe
     @Override
     public void onItemClick(int position, String item_id,String class_id) {
         DetailActivity.StartActivity(mContext,item_id,class_id);
+    }
+
+    /**
+     * 记录RecyclerView当前位置
+     */
+    private void getPositionAndOffset() {
+        LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+        //获取可视的第一个view
+        View topView = layoutManager.getChildAt(0);
+        if(topView != null) {
+            //获取与该view的顶部的偏移量
+            lastOffset = topView.getTop();
+            //得到该View的数组位置
+            lastPosition = layoutManager.getPosition(topView);
+        }
+    }
+
+    /**
+     * 让RecyclerView滚动到指定位置
+     */
+    private void scrollToPosition() {
+        if(recyclerView.getLayoutManager() != null && lastPosition >= 0) {
+            ((LinearLayoutManager) recyclerView.getLayoutManager()).scrollToPositionWithOffset(lastPosition, lastOffset);
+        }
     }
 }

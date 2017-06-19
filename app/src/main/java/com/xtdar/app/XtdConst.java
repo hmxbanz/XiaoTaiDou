@@ -7,7 +7,7 @@ package com.xtdar.app;
 public class XtdConst {
     public static final String EXIT = "EXIT";
     public static final String NNYVERSION = "1.0.5";
-    public static final String GETVERSION = "http://www.xtdar.com/Update.json";
+    public static final String GETVERSION = "http://120.24.231.219/kp_dyz/app_source/dl/version.txt";
     public static final int SUCCESS = 1;
     public static final int FAILURE=2;
     public static final int LOGINTIMEOUT =6;

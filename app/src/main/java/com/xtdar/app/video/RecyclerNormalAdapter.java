@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.xtdar.app.R;
+import com.xtdar.app.server.response.ShowResponse;
 
 import java.util.List;
 
@@ -17,10 +18,10 @@ import java.util.List;
 public class RecyclerNormalAdapter extends RecyclerView.Adapter {
     private final static String TAG = "RecyclerBaseAdapter";
 
-    private List<VideoModel> itemDataList = null;
+    private List<ShowResponse.DataBean> itemDataList = null;
     private Context context = null;
 
-    public RecyclerNormalAdapter(Context context, List<VideoModel> itemDataList) {
+    public RecyclerNormalAdapter(Context context, List<ShowResponse.DataBean> itemDataList) {
         this.itemDataList = itemDataList;
         this.context = context;
     }
@@ -52,7 +53,7 @@ public class RecyclerNormalAdapter extends RecyclerView.Adapter {
         return 1;
     }
 
-    public void setListData(List<VideoModel> data) {
+    public void setListData(List<ShowResponse.DataBean> data) {
         itemDataList = data;
         notifyDataSetChanged();
     }

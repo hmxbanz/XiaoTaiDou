@@ -7,6 +7,7 @@
     android:layout_marginTop="10dp">
 
   <TextView
+      android:id="@+id/title"
       android:text="默认标题"
       android:textSize="16dp"
       android:padding="5dp"
@@ -21,37 +22,32 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
     <TextView
+        android:id="@+id/nickname"
         android:text="用户名"
         android:padding="5dp"
         android:layout_width="50dp"
         android:layout_height="match_parent" />
     <TextView
+        android:id="@+id/createdate"
         android:text="2017-4-8"
-        android:padding="5dp"
-        android:layout_width="60dp"
-        android:layout_height="match_parent" />
-    <TextView
-        android:gravity="right"
-        android:text="观看："
         android:padding="5dp"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent" />
     <TextView
-        android:text="15"
+        android:id="@+id/click_count"
+        android:text="观看："
         android:padding="5dp"
-        android:layout_width="25dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent" />
+
     <TextView
+        android:id="@+id/comment_count"
         android:text="评论："
         android:padding="5dp"
-        android:layout_width="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent" />
-    <TextView
-        android:text="15"
-        android:padding="5dp"
-        android:layout_width="25dp"
-        android:layout_height="match_parent" />
+
   </LinearLayout>
 
 
