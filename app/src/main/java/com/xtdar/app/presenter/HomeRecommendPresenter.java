@@ -10,6 +10,7 @@ import com.xtdar.app.R;
 import com.xtdar.app.XtdConst;
 import com.xtdar.app.adapter.HomeRecommendAdapter;
 import com.xtdar.app.adapter.RecyclerViewAdapter;
+import com.xtdar.app.common.json.JsonMananger;
 import com.xtdar.app.model.UserList;
 import com.xtdar.app.server.HttpException;
 import com.xtdar.app.server.async.OnDataListener;
@@ -47,7 +48,21 @@ public class HomeRecommendPresenter extends BasePresenter implements OnDataListe
 
         gridLayoutManager=new GridLayoutManager(mContext,1);
         recycleView.setLayoutManager(gridLayoutManager);
+        //取缓存
+        String RecommendListCache = aCache.getAsString("RecommendList");
+        if(RecommendListCache!=null && !("null").equals(RecommendListCache))
+            try {
+                list = JsonMananger.jsonToList(RecommendListCache, RecommendResponse.DataBean.RecommendListBean.class);
+            } catch (HttpException e) {
+                e.printStackTrace();
+            }
 
+
+        //设置列表
+        dataAdapter = new HomeRecommendAdapter(list, mContext);
+        //dataAdapter.setFooterView(LayoutInflater.from(mContext).inflate(R.layout.recyclerview_footer,null));
+        recycleView.setAdapter(dataAdapter);
+        recycleView.setNestedScrollingEnabled(false);
 
         LoadDialog.show(mContext);
         atm.request(GETADS,this);
@@ -85,11 +100,13 @@ public class HomeRecommendPresenter extends BasePresenter implements OnDataListe
                 RecommendResponse recommendResponse = (RecommendResponse) result;
                 if (recommendResponse.getCode() == XtdConst.SUCCESS) {
                     list=recommendResponse.getData().getRecommend_list();
-                    //设置列表
-                    dataAdapter = new HomeRecommendAdapter(list, mContext);
-                    //dataAdapter.setFooterView(LayoutInflater.from(mContext).inflate(R.layout.recyclerview_footer,null));
-                    recycleView.setAdapter(dataAdapter);
-                    recycleView.setNestedScrollingEnabled(false);
+                    try {
+                        String cache=JsonMananger.beanToJson(list);
+                        aCache.put("RecommendList",cache);
+                    } catch (HttpException e) {
+                        e.printStackTrace();
+                    }
+                    dataAdapter.notifyDataSetChanged();
                 }
                 break;
         }

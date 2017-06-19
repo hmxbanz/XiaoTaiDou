@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.design.widget.TabLayout;
 
 import com.xtdar.app.XtdConst;
+import com.xtdar.app.common.json.JsonMananger;
 import com.xtdar.app.server.HttpException;
 import com.xtdar.app.server.async.OnDataListener;
 import com.xtdar.app.server.response.TagResponse;
@@ -18,6 +19,7 @@ import java.util.List;
 public class HomeFragmentPresenter extends BasePresenter implements OnDataListener {
     private static final int GETTAGS = 1;
     private TabLayout tabLayout;
+    private List<TagResponse.ResultEntity> tagList;
 
     //private ContactsActivity mActivity;
     public HomeFragmentPresenter(Context context){
@@ -27,6 +29,19 @@ public class HomeFragmentPresenter extends BasePresenter implements OnDataListen
 
     public void init(TabLayout tabLayout) {
         this.tabLayout=tabLayout;
+        //取缓存
+        String TagListCache = aCache.getAsString("TagList");
+        if(TagListCache!=null && !("null").equals(TagListCache)) {
+            try {
+                tagList = JsonMananger.jsonToList(TagListCache, TagResponse.ResultEntity.class);
+                for (int i = 0; i <= tagList.size(); i++) {
+                    tabLayout.getTabAt(i).setText(tagList.get(i).getClass_name());
+                }
+            } catch (HttpException e) {
+                e.printStackTrace();
+            }
+
+        }
         LoadDialog.show(mContext);
         atm.request(GETTAGS,this);
     }
@@ -47,9 +62,15 @@ public class HomeFragmentPresenter extends BasePresenter implements OnDataListen
             case GETTAGS:
                 TagResponse tagResponse = (TagResponse) result;
                 if (tagResponse.getCode() == XtdConst.SUCCESS) {
-                    List<TagResponse.ResultEntity> entities = tagResponse.getData();
-                    for (int i=0;i<=entities.size();i++) {
-                        tabLayout.getTabAt(i).setText(entities.get(i).getClass_name());
+                     tagList = tagResponse.getData();
+                    try {
+                        String cache= JsonMananger.beanToJson(tagList);
+                        aCache.put("TagList",cache);
+                    } catch (HttpException e) {
+                        e.printStackTrace();
+                    }
+                    for (int i = 0; i<= tagList.size(); i++) {
+                        tabLayout.getTabAt(i).setText(tagList.get(i).getClass_name());
                     }
                 }
                 break;
